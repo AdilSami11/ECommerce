@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
-
+const config = require('config');
+const dbgr = require('debug')('development:mongoose');
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://127.0.0.1:27017/store');
+    await mongoose.connect(`${config.get('MONGO_URL')}/store`);
 
-    console.log('database is connected!');
+    dbgr('Database is connected!');
   } catch (error) {
-    console.log('Database cannot connected due to some issue', error);
+    dbgr('Database cannot connect:', error.message);
   }
 };
 
 module.exports = connectDB;
+  
