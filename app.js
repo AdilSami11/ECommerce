@@ -3,25 +3,22 @@ const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
-const ownersRoutes = require('./routes/ownersRoutes');
-const usersRoutes = require('./routes/usersRoutes');
-const productsRoutes = require('./routes/productsRoutes');
-
-// database Connection:
+const dotenv = require('dotenv');
+const authRoute = require('./routes/authRoute');
+dotenv.config();
+// Import your new Auth Routes
+// Database Connection
 connectDB();
 
-// middleWares :
+// Middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-// Routes
-app.use('/owners', ownersRoutes);
-app.use('/users', usersRoutes);
-app.use('/products', productsRoutes);
+app.use('/auth', authRoute);
 
 app.listen(3000, () => {
-  console.log('server is running....');
+  console.log('Server is running on http://localhost:3000');
 });

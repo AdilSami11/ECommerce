@@ -1,19 +1,27 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/Store');
-
 const userSchema = mongoose.Schema({
   name: {
     type: String,
-    minLength: 4,
     trim: true,
+    required: true,
   },
-  email: String,
-  password: String,
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
   cart: {
     type: Array,
     default: [],
   },
-  isAdmin: Boolean,
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
   orders: {
     type: Array,
     default: [],
