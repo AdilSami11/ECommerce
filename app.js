@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const authRoute = require('./routes/authRoute');
+const addProduct = require('./routes/addProductRoute');
 const isLoggedIn = require('./utils/authMiddleWare');
 dotenv.config();
 // Import your new Auth Routes
@@ -18,8 +19,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
+// Routes
 app.use('/auth', authRoute);
+app.use('/products', addProduct);
 
+// Root Route
 app.get('/', isLoggedIn, (req, res) => {
   res.render('index', { user: req.user });
 });

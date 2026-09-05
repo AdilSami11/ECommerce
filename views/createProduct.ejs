@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/addProducts.css" />
+    <title>Add Product</title>
+  </head>
+  <body>
+    <div class="form-main-wrapper">
+      <h2>Create New Product</h2>
+      <form action="/products/add" method="POST">
+        <label>Bag Name:</label><br />
+        <input type="text" name="name" required /><br /><br />
+
+        <label>Price ($):</label><br />
+        <input type="number" name="price" required /><br /><br />
+
+        <label>Discount ($):</label><br />
+        <input type="number" name="discount" value="0" /><br /><br />
+
+        <label>Background Color :</label><br />
+        <input type="text" name="bgcolor" placeholder="#f3f3f3" /><br /><br />
+
+        <label>Panel Color:</label><br />
+        <input
+          type="text"
+          name="panelcolor"
+          placeholder="#ffffff"
+        /><br /><br />
+
+        <label>Text Color:</label><br />
+        <input type="text" name="textcolor" placeholder="#000000" /><br /><br />
+
+        <label>Image URL:</label><br />
+        <input
+          type="text"
+          name="image"
+          placeholder="https://example.com/bag.jpg"
+          required
+        /><br /><br />
+
+        <label>Description:</label><br />
+        <textarea name="description"></textarea><br /><br />
+
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  </body>
+</html>

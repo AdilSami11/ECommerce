@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 html,
 body {
@@ -12,38 +15,58 @@ body {
 .main-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #000;
+  background-color: #eef2ff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #6b7280;
 }
 
-/* .form-wrapper { */
-/* border: 2px solid red; */
-/* max-width: 400px;
+.form-wrapper {
+  /* border: 2px solid #4f46e5; */
+  max-width: 350px;
   width: 100%;
-} */
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 30px 10px;
+}
 .form-wrapper h2 {
   margin-bottom: 30px;
+  color: #111827;
+  text-align: center;
 }
 form {
   padding: 0 5px;
-  width: 400px;
-  width: 100%;
+}
+form > label {
+  color: #111827;
 }
 form > input {
   padding: 8px 10px;
-  border: 1.5px solid grey;
+  border: 2px solid #d1d5db;
   margin-top: 10px;
+  width: 100%;
   outline: none;
-  color: #fff;
+  color: #6b7280;
   background-color: transparent;
   border-radius: 4px;
 }
-form > button {
-  padding: 7px 15px;
+
+.btns-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btns-wrapper button {
+  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
-  background-color: yellow;
+  border-radius: 7px;
+  background-color: #4f46e5;
+  color: #fff;
+  transition: all ease-in 0.2s;
+}
+.btns-wrapper button:hover {
+  background-color: #3d30cb;
+  cursor: pointer;
 }
