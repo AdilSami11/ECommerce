@@ -29,24 +29,65 @@ const postRegistration = async (req, res) => {
     });
     // Send confirmation or redirect
     res.send(
-      'Registration successful! User saved to MongoDB. <a href="/login">Login Page</a>'
+      'Registration successful! User saved to MongoDB. <a href="/auth/login">Login Page</a>'
     );
   } catch (error) {
     res.send('Error in registration: ' + error.message);
   }
 };
 
-// ***********************************************************
 // --- LOGIN LOGIC ---
 
 const getLogin = (req, res) => {
   res.render('login');
 };
 
-const postLogin = async (req, res) => {};
+const postLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const checkUser = await userModel.findOne({ email });
+
+    if (!checkUser)
+      return res.send(
+        'Invalid credentials! <a href="/auth/login">Try again</a>'
+      );
+
+    // matching the password with existing user to newly enterd password:
+
+    const isMatch = await bcrypt.compare(password, checkUser.password);
+    if (!isMatch)
+      return res.send(
+        'Invalid credentials! <a href="/auth/login">Try again</a>'
+      );
+
+    // Assigning Cookie to Correct User
+    const token = jwt.sign(
+      {
+        id: checkUser._id,
+        email: checkUser.email,
+        password: checkUser.password,
+      },
+      process.env.Secret_Key || 'mysecretkey'
+    );
+    // sending Cookie to Ui/Frontend
+    res.cookie('token', token);
+    res.redirect('/');
+  } catch (error) {
+    res.send('Error', error);
+  }
+};
+
+// LOGOUT LOGIC:
+
+const logOut = async (req, res) => {
+  res.clearCookie('token');
+  res.redirect('/auth/login');
+};
 
 module.exports = {
   getRegistration,
   postRegistration,
   getLogin,
+  postLogin,
+  logOut,
 };

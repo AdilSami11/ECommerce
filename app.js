@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const authRoute = require('./routes/authRoute');
+const isLoggedIn = require('./utils/authMiddleWare');
 dotenv.config();
 // Import your new Auth Routes
 // Database Connection
@@ -19,6 +20,9 @@ app.set('view engine', 'ejs');
 
 app.use('/auth', authRoute);
 
+app.get('/', isLoggedIn, (req, res) => {
+  res.render('index', { user: req.user });
+});
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
 });
