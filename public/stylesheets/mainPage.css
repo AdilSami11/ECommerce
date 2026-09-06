@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f8f6f1;
+}
+
+.main-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  background-color: #1f1f1f;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.logo {
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.nav-links-wrapper a {
+  text-decoration: none;
+  color: #e8e8e8;
+  transition: all ease-in-out 0.2s;
+}
+.nav-links-wrapper a:hover {
+  color: #a67c52;
+}
+
+.hero-sec-wrapper {
+  width: 100%;
+  min-height: 80vh;
+  padding: 60px 30px;
+  background-color: #f8f6f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-content {
+  width: 50%;
+}
+
+.hero-content .hero-small-text {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #a67c52;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  line-height: 1;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+
+.hero-content .hero-description {
+  max-width: 450px;
+  color: #6b6b6b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-content .hero-btn {
+  display: inline-block;
+  background-color: #1f1f1f;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
+.hero-content .hero-btn:hover {
+  background-color: #a67c52;
+}
+
+/* HERO IMAGE */
+
+.hero-img {
+  width: 50%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* .products-main-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 40px;
+  gap: 10px;
+}
+
+.product {
+  border: 2px solid rgb(36, 103, 15);
+  padding: 20px 5px;
+}
+.product-panel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  overflow: hidden;
+} */

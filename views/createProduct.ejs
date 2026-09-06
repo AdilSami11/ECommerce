@@ -6,42 +6,66 @@
     <link rel="stylesheet" href="/stylesheets/addProducts.css" />
     <title>Add Product</title>
   </head>
+
   <body>
     <div class="form-main-wrapper">
       <h2>Create New Product</h2>
+
       <form action="/products/add" method="POST">
-        <label>Bag Name:</label><br />
-        <input type="text" name="name" required /><br /><br />
+        <div class="form-grid">
+          <!-- Bag Name -->
+          <div class="form-group full-width">
+            <label>Bag Name:</label>
+            <input type="text" name="name" required />
+          </div>
 
-        <label>Price ($):</label><br />
-        <input type="number" name="price" required /><br /><br />
+          <!-- Price -->
+          <div class="form-group">
+            <label>Price ($):</label>
+            <input type="number" name="price" required />
+          </div>
 
-        <label>Discount ($):</label><br />
-        <input type="number" name="discount" value="0" /><br /><br />
+          <!-- Discount -->
+          <div class="form-group">
+            <label>Discount ($):</label>
+            <input type="number" name="discount" value="0" />
+          </div>
 
-        <label>Background Color :</label><br />
-        <input type="text" name="bgcolor" placeholder="#f3f3f3" /><br /><br />
+          <!-- Background Color -->
+          <div class="form-group">
+            <label>Background Color:</label>
+            <input type="text" name="bgcolor" placeholder="#f3f3f3" />
+          </div>
 
-        <label>Panel Color:</label><br />
-        <input
-          type="text"
-          name="panelcolor"
-          placeholder="#ffffff"
-        /><br /><br />
+          <!-- Panel Color -->
+          <div class="form-group">
+            <label>Panel Color:</label>
+            <input type="text" name="panelcolor" placeholder="#ffffff" />
+          </div>
 
-        <label>Text Color:</label><br />
-        <input type="text" name="textcolor" placeholder="#000000" /><br /><br />
+          <!-- Text Color -->
+          <div class="form-group full-width">
+            <label>Text Color:</label>
+            <input type="text" name="textcolor" placeholder="#000000" />
+          </div>
 
-        <label>Image URL:</label><br />
-        <input
-          type="text"
-          name="image"
-          placeholder="https://example.com/bag.jpg"
-          required
-        /><br /><br />
+          <!-- Image URL -->
+          <div class="form-group full-width">
+            <label>Image URL:</label>
+            <input
+              type="text"
+              name="image"
+              placeholder="https://example.com/bag.jpg"
+              required
+            />
+          </div>
 
-        <label>Description:</label><br />
-        <textarea name="description"></textarea><br /><br />
+          <!-- Description -->
+          <div class="form-group full-width">
+            <label>Description:</label>
+            <textarea name="description"></textarea>
+          </div>
+        </div>
 
         <button type="submit">Add Product</button>
       </form>

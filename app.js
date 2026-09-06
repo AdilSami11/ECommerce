@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 const authRoute = require('./routes/authRoute');
 const addProduct = require('./routes/addProductRoute');
 const isLoggedIn = require('./utils/authMiddleWare');
+const productModel = require('./models/productModel');
 dotenv.config();
 // Import your new Auth Routes
 // Database Connection
@@ -24,8 +25,13 @@ app.use('/auth', authRoute);
 app.use('/products', addProduct);
 
 // Root Route
-app.get('/', isLoggedIn, (req, res) => {
-  res.render('index', { user: req.user });
+app.get('/', isLoggedIn, async (req, res) => {
+  try {
+    const product = await productModel.find();
+    res.render('index', { user: req.user, product });
+  } catch (error) {
+    res.send('Error at rendering product from Db...', error);
+  }
 });
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');

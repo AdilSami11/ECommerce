@@ -34,6 +34,7 @@ const postAddProduct = async (req, res) => {
     res.send(
       'Product created successfully! <a href="/products/add">Add Another</a> | <a href="/">Go to Shop</a>'
     );
+    console.log(addProduct);
   } catch (error) {
     res.send('Error', error);
   }

@@ -1,11 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Bag Store - Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/mainPage.css" />
+    <title>NAQSH-STORE</title>
   </head>
+
   <body>
-    <h1>Welcome to Bag Store, <%= user.name %>!</h1>
-    <p>You have successfully logged in using JWT.</p>
-    <a href="/auth/logout">Logout</a>
+    <div class="main-page-wrapper">
+      <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Shop</a>
+          <a href="/products/add">Add Product</a>
+          <a href="/cart">Cart (0)</a>
+          <a href="/auth/logout" class="logout-btn">Logout</a>
+        </div>
+      </div>
+      <!-- hero-section -->
+      <div class="hero-sec-wrapper">
+        <div class="hero-content">
+          <p class="hero-small-text">STYLE • QUALITY • EVERYDAY</p>
+          <h1>
+            Carry Your<br />
+            <span>Style.</span>
+          </h1>
+          <p class="hero-description">
+            Discover stylish and practical bags made for every journey.
+          </p>
+          <a href="/products" class="hero-btn">Shop Now</a>
+        </div>
+        <div class="hero-img">
+          <img src="/images/Hero_img.png" alt="Hero_img" />
+        </div>
+      </div>
+
+      <!-- <div class="products-main-wrapper">
+
+        <% if (product.length === 0) { %>
+
+          <p>No Products Available Yet....</p>
+
+        <% } else { %>
+
+          <% product.forEach(function (item) { %>
+
+            <div
+              class="product"
+              style="
+                background-color: "<%= item.bgcolor %>;
+                color: <%= item.textcolor %>;
+              "
+            >
+              <div
+                class="product-panel"
+                style="
+                  background-color: <%= item.panelcolor %>;
+                "
+              >
+
+                <img
+                  src="<%= item.image %>"
+                  alt="<%= item.name %>"
+                />
+
+                <h3 style="color: <%= item.textcolor %>;">
+                  <%= item.name %>
+                </h3>
+
+                <p style="color: <%= item.textcolor %>;">
+                  <%= item.description %>
+                </p>
+
+                <p style="color: <%= item.textcolor %>;">
+                  <strong>Price:</strong> $<%= item.price %>
+                </p>
+
+                <% if (item.discount > 0) { %>
+
+                  <p style="color: green;">
+                    <strong>Discount:</strong> $<%= item.discount %>
+                  </p>
+
+                <% } %>
+
+                <button>Add to Cart</button>
+
+              </div>
+
+            </div>
+
+          <% }); %>
+
+        <% } %>
+
+      </div> -->
+    </div>
   </body>
 </html>
