@@ -21,7 +21,7 @@ body {
 .navbar-wrapper {
   width: 100%;
   background-color: #1f1f1f;
-  height: 80px;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +50,7 @@ body {
 
 .hero-sec-wrapper {
   width: 100%;
-  min-height: 80vh;
+  min-height: 90vh;
   padding: 60px 30px;
   background-color: #f8f6f1;
   display: flex;
@@ -114,6 +114,81 @@ body {
   object-fit: cover;
   display: block;
 }
+
+.card-main-section {
+  padding: 60px 0;
+  /* background-color: aquamarine; */
+}
+.title-wrapper {
+  margin-bottom: 25px;
+}
+.title-wrapper h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1f1f1f;
+}
+.cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  padding: 30px 5px;
+  /* border: 2px solid red; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.card-img {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid greenyellow; */
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-info {
+  /* background-color: violet; */
+}
+.card-info #product-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.card-info #product-desc {
+  max-width: 450px;
+  color: #6b6b6b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.view-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-more-btn button {
+  background-color: #1f1f1f;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
 /* .products-main-wrapper {
   max-width: 1200px;
   margin: auto;

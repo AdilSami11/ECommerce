@@ -27,7 +27,7 @@ app.use('/products', addProduct);
 // Root Route
 app.get('/', isLoggedIn, async (req, res) => {
   try {
-    const product = await productModel.find();
+    const product = await productModel.find().limit(3);
     res.render('index', { user: req.user, product });
   } catch (error) {
     res.send('Error at rendering product from Db...', error);

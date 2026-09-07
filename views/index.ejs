@@ -36,66 +36,33 @@
         </div>
       </div>
 
-      <!-- <div class="products-main-wrapper">
+      <!-- 3-cards-section -->
+<div class="card-main-section">
+  <div class="title-wrapper">
+    <h2>FEATURED BAGS</h2>
+  </div>
 
-        <% if (product.length === 0) { %>
+  <div class="cards-wrapper">
+    <% product.forEach(function(items) { %>
 
-          <p>No Products Available Yet....</p>
+      <div class="card">
+        <div class="card-img">
+          <img src="<%= items.image %>" alt="<%= items.name %>" />
+        </div>
 
-        <% } else { %>
+        <div class="card-info">
+          <h3 id="product-name">Name: <%=items.name %></h3>
+          <p id="product-price">Price :$<%= items.price %></p>
+          <!-- <p id="product-desc" ><%= items.description %></p> -->
+        </div>
+      </div>
 
-          <% product.forEach(function (item) { %>
-
-            <div
-              class="product"
-              style="
-                background-color: "<%= item.bgcolor %>;
-                color: <%= item.textcolor %>;
-              "
-            >
-              <div
-                class="product-panel"
-                style="
-                  background-color: <%= item.panelcolor %>;
-                "
-              >
-
-                <img
-                  src="<%= item.image %>"
-                  alt="<%= item.name %>"
-                />
-
-                <h3 style="color: <%= item.textcolor %>;">
-                  <%= item.name %>
-                </h3>
-
-                <p style="color: <%= item.textcolor %>;">
-                  <%= item.description %>
-                </p>
-
-                <p style="color: <%= item.textcolor %>;">
-                  <strong>Price:</strong> $<%= item.price %>
-                </p>
-
-                <% if (item.discount > 0) { %>
-
-                  <p style="color: green;">
-                    <strong>Discount:</strong> $<%= item.discount %>
-                  </p>
-
-                <% } %>
-
-                <button>Add to Cart</button>
-
-              </div>
-
-            </div>
-
-          <% }); %>
-
-        <% } %>
-
-      </div> -->
+    <% }) %>
+  </div>
+  <div class="view-more-btn">
+    <button>View More</button>
+  </div>
+</div>
     </div>
   </body>
 </html>
