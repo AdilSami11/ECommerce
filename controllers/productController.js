@@ -40,7 +40,19 @@ const postAddProduct = async (req, res) => {
   }
 };
 
+// get all products and show on page :
+
+const getProducts = async (req, res) => {
+  try {
+    const getAllProducts = await productModel.find();
+    res.render('products', { getAllProducts });
+  } catch (error) {
+    res.send('Error :', error);
+  }
+};
+
 module.exports = {
   getAddProduct,
   postAddProduct,
+  getProducts,
 };

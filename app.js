@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const authRoute = require('./routes/authRoute');
-const addProduct = require('./routes/addProductRoute');
+const productRoute = require('./routes/productRoute');
 const isLoggedIn = require('./utils/authMiddleWare');
 const productModel = require('./models/productModel');
 dotenv.config();
@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.use('/auth', authRoute);
-app.use('/products', addProduct);
+app.use('/products', productRoute);
 
 // Root Route
 app.get('/', isLoggedIn, async (req, res) => {
