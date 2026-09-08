@@ -20,17 +20,17 @@ body {
 
 .navbar-wrapper {
   width: 100%;
-  background-color: #1f1f1f;
+  /* background-color: #1f1f1f; */
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 
 .logo {
   font-size: 1.7rem;
-  color: #ffffff;
+  color: #1f1f1f;
 }
 
 .nav-links-wrapper {
@@ -39,9 +39,22 @@ body {
   justify-content: center;
   gap: 15px;
 }
+.nav-links-wrapper .logout-btn {
+  background-color: #1f1f1f;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+.nav-links-wrapper .logout-btn:hover {
+  background-color: #a67c52;
+  color: #ffffff;
+}
+
 .nav-links-wrapper a {
   text-decoration: none;
-  color: #e8e8e8;
+  color: #1f1f1f;
   transition: all ease-in-out 0.2s;
 }
 .nav-links-wrapper a:hover {
@@ -51,7 +64,7 @@ body {
 .hero-sec-wrapper {
   width: 100%;
   min-height: 90vh;
-  padding: 60px 30px;
+  padding: 60px 50px;
   background-color: #f8f6f1;
   display: flex;
   align-items: center;
@@ -131,7 +144,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
 }
 
 .card {
@@ -189,6 +202,72 @@ body {
   transition: 0.2s ease-in-out;
 }
 
+.chooseUs-main-section {
+  padding: 40px 10px;
+  margin-top: 20px;
+  /* background-color: tomato; */
+}
+.choose-us-title {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.choose-us-title h1 {
+  font-size: 2rem;
+  color: #1f1f1f;
+}
+.choose-us-title p {
+  color: #6b6b6b;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.choose-us-cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.chooseUs-card {
+  padding: 30px 10px;
+  max-width: 300px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease-in-out;
+}
+.chooseUs-card:hover {
+  background-color: #a67c52;
+  color: #ffffff;
+}
+.chooseUs-card #icon,
+.chooseUs-card h2,
+.chooseUs-card p {
+  transition: color 0.2s ease-in-out;
+}
+.chooseUs-card:hover #icon,
+.chooseUs-card:hover h2,
+.chooseUs-card:hover p {
+  color: #ffffff;
+}
+.chooseUs-card #icon {
+  font-size: 2rem;
+}
+.chooseUs-card h2 {
+  font-size: 1.5rem;
+  color: #1f1f1f;
+}
+.chooseUs-card p {
+  color: #6b6b6b;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
 /* .products-main-wrapper {
   max-width: 1200px;
   margin: auto;
