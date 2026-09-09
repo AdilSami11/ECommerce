@@ -3,9 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/productsPage.css" />
     <title>Shop - Products</title>
   </head>
   <body>
-    <h1>Welcome to products page</h1>
+    <div class="products-page-wrapper">
+      <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (0)</a>
+          <a href="/auth/logout" class="logout-btn">Logout</a>
+        </div>
+      </div>
+      <div class="main-poducts-wrapper">
+        <div class="products-title-wrapper">
+          <h1>ALL BAGS</h1>
+          <p>
+            Find the perfect bag for <br />
+            every journey.
+          </p>
+        </div>
+        <div class="products-filteraion-wrapper">
+          <label for="sort">Sort By</label>
+
+          <select id="sort" name="sort">
+            <option value="">Default</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="discount">Highest Discount</option>
+          </select>
+
+          <button type="submit">Apply</button>
+        </div>
+        <div class="products-cards-wrapper">
+          <% getAllProducts.forEach(function(prod){ %>
+                <div class="product-card">
+                   <div class="prod-img">
+                    <img src="<%=prod.image %>" alt="<%=prod.name%>">
+                   </div>
+                   <div class="prod-info"> 
+                    <h2><%= prod.name %></h2>
+                    <p><%= prod.description %></p>
+                    <p id="prod-price"> Rs. <%= prod.price %></p>
+                    <button>View Product</button>
+
+                  </div>
+                </div>
+         <% }) %>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="footer-wrapper"></div>
+    </div>
   </body>
 </html>

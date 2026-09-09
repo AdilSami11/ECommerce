@@ -24,8 +24,8 @@ app.set('view engine', 'ejs');
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
 
-// Root Route
-app.get('/', isLoggedIn, async (req, res) => {
+// Root(main Page) Route
+app.get('/', async (req, res) => {
   try {
     const product = await productModel.find().limit(3);
     res.render('index', { user: req.user, product });
