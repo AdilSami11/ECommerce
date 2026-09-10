@@ -5,7 +5,8 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 
 // product page view + Add product route:
-router.get('/', productController.getProducts);
 router.get('/add', productController.getAddProduct);
 router.post('/add', productController.postAddProduct);
+router.get('/', productController.getProducts);
+router.get('/:id', productController.getProductById);
 module.exports = router;
