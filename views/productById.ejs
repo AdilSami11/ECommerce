@@ -3,9 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/prodById.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Products - Details</title>
   </head>
   <body>
-    <h1><%=product.name%></h1>
+    <div class="single-product-main-wrapper">
+      <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (0)</a>
+          <a href="/auth/logout" class="logout-btn">Logout</a>
+        </div>
+      </div>
+      <div class="navigate-back-wrapper">
+        <a href="/products"><i class="ri-arrow-left-s-line"></i></a>
+      </div>
+      <div class="prod-main-title"><h1>PRODUCT DETAILS</h1></div>
+      <!-- product details main wrapper -->
+      <div class="prod-detail-wrapper">
+        <div class="prod-img-wrapper">
+          <img src="<%=product.image%>" alt="<%=product.name%>" />
+        </div>
+        <div class="prod-details-wrapper">
+          <h1><%=product.name %></h1>
+          <h3>Rs. <%=product.price %></h3>
+          <h4>Discount : <%=product.discount%>% OFF</h4>
+          <p><%=product.description %></p>
+          <div class="quantity-wrapper">
+            <button>+</button>
+            <strong>0</strong>
+            <button>-</button>
+          </div>
+          <div class="cart-btn">
+            <button>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

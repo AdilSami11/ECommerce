@@ -11,6 +11,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: #f8f6f1;
+  overflow-x: hidden;
 }
 
 .main-page-wrapper {
@@ -192,13 +193,15 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+.view-more-btn button a {
+  text-decoration: none;
+  color: #ffffff;
+}
 .view-more-btn button {
   background-color: #1f1f1f;
   border: none;
   padding: 12px 25px;
   border-radius: 4px;
-  color: #ffffff;
   transition: 0.2s ease-in-out;
 }
 
