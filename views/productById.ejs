@@ -41,7 +41,10 @@
             <button>-</button>
           </div>
           <div class="cart-btn">
-            <button>Add to Cart</button>
+            <!-- Form submits directly to cart logic -->
+            <form action="/cart/add/<%= product._id %>" method="POST">
+              <button type="submit" class="btn-cart">Add to Cart</button>
+            </form>
           </div>
         </div>
       </div>

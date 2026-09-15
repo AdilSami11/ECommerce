@@ -14,15 +14,6 @@ const productSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
-  bgcolor: {
-    type: String,
-  },
-  panelcolor: {
-    type: String,
-  },
-  textcolor: {
-    type: String,
-  },
   image: {
     type: String,
     required: true,

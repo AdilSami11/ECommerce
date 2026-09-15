@@ -9,25 +9,13 @@ const getAddProduct = (req, res) => {
 
 const postAddProduct = async (req, res) => {
   try {
-    const {
-      name,
-      price,
-      discount,
-      bgcolor,
-      panelcolor,
-      textcolor,
-      image,
-      description,
-    } = req.body;
+    const { name, price, discount, image, description } = req.body;
 
     // Adding product
     const addProduct = await productModel.create({
       name,
       price,
       discount,
-      bgcolor,
-      panelcolor,
-      textcolor,
       image,
       description,
     });

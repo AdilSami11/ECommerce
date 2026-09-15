@@ -4,10 +4,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
-const authRoute = require('./routes/authRoute');
-const productRoute = require('./routes/productRoute');
 const isLoggedIn = require('./utils/authMiddleWare');
 const productModel = require('./models/productModel');
+// routess.....
+const productRoute = require('./routes/productRoute');
+const authRoute = require('./routes/authRoute');
+const cartRoute = require('./routes/cartRoute');
 dotenv.config();
 // Import your new Auth Routes
 // Database Connection
@@ -23,6 +25,7 @@ app.set('view engine', 'ejs');
 // Routes
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
+app.use('/cart', cartRoute);
 
 // Root(main Page) Route
 app.get('/', async (req, res) => {
