@@ -60,7 +60,6 @@ const getCarts = async (req, res) => {
     if (!cart) {
       return res.render('cart', { cart: null });
     }
-
     res.render('cart', { cart });
   } catch (error) {
     console.log(error);

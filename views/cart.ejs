@@ -4,11 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/CartPage.css" />
-    <title>Document</title>
+    <title>Cart</title>
   </head>
   <body>
     <div class="main-cart-page-wrapper">
-      <h2>Welcome to Cart Page</h2>
+      <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (<%= cart.items.length %>)</a>
+          <a href="/auth/logout" class="logout-btn">Logout</a>
+        </div>
+      </div>
+       <div class="cart-title-wrapper">
+      <h2>Your Cart.</h2>
+    </div>
+     <% if (!cart || cart.items.length === 0) { %>
+
+  <h1>No Product has been Added to Cart.</h1>
+
+<% } else { %>
+
+  <div class="cart-items-wrapper">
+    <% cart.items.forEach(function(cartItem) { %>
+      <div class="cart-item">
+        <img src="<%= cartItem.product.image %>" width="150">
+        <h2><%= cartItem.product.name %></h2>
+        <p>Price: Rs. <%= cartItem.product.price %></p>
+        <p>Quantity: <%= cartItem.quantity %></p>
+        <button>Delete Item</button>
+      </div>
+    <% }) %>
+  </div>
+<% } %>
     </div>
   </body>
 </html>

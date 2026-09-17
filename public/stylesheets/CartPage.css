@@ -18,3 +18,65 @@ body {
   min-height: 100vh;
   background-color: #f8f6f1;
 }
+
+.navbar-wrapper {
+  width: 100%;
+  /* background-color: #1f1f1f; */
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.logo {
+  font-size: 1.7rem;
+  color: #1f1f1f;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.nav-links-wrapper .logout-btn {
+  background-color: #1f1f1f;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+.nav-links-wrapper .logout-btn:hover {
+  background-color: #a67c52;
+  color: #ffffff;
+}
+
+.nav-links-wrapper a {
+  text-decoration: none;
+  color: #1f1f1f;
+  transition: all ease-in-out 0.2s;
+}
+.nav-links-wrapper a:hover {
+  color: #a67c52;
+}
+
+.cart-items-wrapper {
+  width: 100%;
+  /* min-height: 90vh; */
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cart-title-wrapper {
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+.cart-title-wrapper h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
