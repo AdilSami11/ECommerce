@@ -7,5 +7,7 @@ const loggedIn = require('../utils/authMiddleWare');
 router.post('/add/:id', loggedIn, cartController.addToCart); // it will be /cart/add/id
 // get all carts:
 router.get('/', loggedIn, cartController.getCarts); // it will be /cart + / = /cart
+//delete cart item:
+router.post('/delete/:id', loggedIn, cartController.deleteCartItem);
 
 module.exports = router;

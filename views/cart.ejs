@@ -29,11 +29,19 @@
   <div class="cart-items-wrapper">
     <% cart.items.forEach(function(cartItem) { %>
       <div class="cart-item">
-        <img src="<%= cartItem.product.image %>" width="150">
-        <h2><%= cartItem.product.name %></h2>
-        <p>Price: Rs. <%= cartItem.product.price %></p>
-        <p>Quantity: <%= cartItem.quantity %></p>
-        <button>Delete Item</button>
+        <div class="cart-item-img-wrapper">
+          <img src="<%= cartItem.product.image %>">
+        </div>
+         <div class="cart-item-details-wrapper">
+           <h2><%= cartItem.product.name %></h2>
+           <p>Price: Rs. <%= cartItem.product.price %></p>
+           <p>Quantity: <%= cartItem.quantity %></p>
+           <div class="cart-delete-btn">
+           <form action="/cart/delete/<%= cartItem.product.id %>" method="POST">
+           <button type="submit">Delete Item</button>
+           </form>
+          </div>   
+         </div>
       </div>
     <% }) %>
   </div>

@@ -67,7 +67,31 @@ const getCarts = async (req, res) => {
   }
 };
 
+// delete by id:
+
+const deleteCartItem = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const checkCart = await cartModel.findOne({
+      user: req.user.id,
+    }); // finding the user and then his cart.
+    if (!checkCart) {
+      return res.redirect('/');
+    }
+
+    checkCart.items = checkCart.items.filter(
+      (item) => item.product.toString() !== id
+    ); // filtering the items in items obj and then searching for clicked Product by (id) and also conv the ObjId of product so string === string
+    await checkCart.save();
+    res.redirect('/cart'); // relocating to cart page as item removes.
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Error Deleting cart');
+  }
+};
+
 module.exports = {
   addToCart,
   getCarts,
+  deleteCartItem,
 };
