@@ -10,6 +10,7 @@ const productModel = require('./models/productModel');
 const productRoute = require('./routes/productRoute');
 const authRoute = require('./routes/authRoute');
 const cartRoute = require('./routes/cartRoute');
+const profileRoute = require('./routes/userProfileRoute');
 dotenv.config();
 // Import your new Auth Routes
 // Database Connection
@@ -26,12 +27,16 @@ app.set('view engine', 'ejs');
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
-
+app.use('/profile', profileRoute);
 // Root(main Page) Route
-app.get('/', async (req, res) => {
+app.get('/', isLoggedIn, async (req, res) => {
   try {
     const product = await productModel.find().limit(3);
-    res.render('index', { user: req.user, product });
+
+    res.render('index', {
+      user: req.user,
+      product,
+    });
   } catch (error) {
     res.send('Error at rendering product from Db...', error);
   }

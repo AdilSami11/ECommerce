@@ -64,8 +64,6 @@ const postLogin = async (req, res) => {
     const token = jwt.sign(
       {
         id: checkUser._id,
-        email: checkUser.email,
-        password: checkUser.password,
       },
       process.env.Secret_Key || 'mysecretkey'
     );
