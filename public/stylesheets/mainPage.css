@@ -40,18 +40,6 @@ body {
   justify-content: center;
   gap: 15px;
 }
-/* .nav-links-wrapper .logout-btn {
-  background-color: #1f1f1f;
-  padding: 8px 15px;
-  text-decoration: none;
-  border-radius: 4px;
-  color: #ffffff;
-  transition: 0.2s ease-in-out;
-}
-.nav-links-wrapper .logout-btn:hover {
-  background-color: #a67c52;
-  color: #ffffff;
-} */
 
 .nav-links-wrapper a {
   text-decoration: none;

@@ -3,18 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/profilePage.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1
-      style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      "
-    >
-      Working on this Page
-    </h1>
+    <div class="main-profile-wrapper">
+      <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (NaN)</a>
+          <a href="/profile"
+            ><img src="/images/profile-img.webp" alt="profile-img"
+          /></a>
+        </div>
+      </div>
+      <div class="profile-title-wrapper">
+        <h1>Your Profile</h1>
+      </div>
+      <div class="profile-details-wrapper">
+        <div class="profile-card">
+          <div class="profile-img-wrapper">
+            <img src="/images/profile-img.webp" alt="profile-img" />
+          </div>
+          <div class="profile-info-wrapper">
+            <h3>Name : <%= user.name %></h3>
+            <h4>Email : <%= user.email %></h4>
+            <div class="profile-btns">
+              <button class="logout-btn">Edit</button>
+              <button class="logout-btn">Log Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
