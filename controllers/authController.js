@@ -10,7 +10,8 @@ const getRegistration = (req, res) => {
 const postRegistration = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
+
     const existingUser = await userModel.findOne({ email });
 
     if (existingUser) {
@@ -28,9 +29,7 @@ const postRegistration = async (req, res) => {
       password: hashPassword,
     });
     // Send confirmation or redirect
-    res.send(
-      'Registration successful! User saved to MongoDB. <a href="/auth/login">Login Page</a>'
-    );
+    res.redirect('/auth/login');
   } catch (error) {
     res.send('Error in registration: ' + error.message);
   }
