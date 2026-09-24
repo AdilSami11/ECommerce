@@ -13,7 +13,19 @@
 
   <body>
     <div class="main-page-wrapper">
-      <div class="navbar-wrapper">
+    <% if(user.isAdmin === true){ %>
+        <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (0)</a>
+          <a href="/cart">Add Products</a>
+          <a href="/profile"><img src="/images/profile-img.webp" alt="profile-img"></a>
+        </div>
+      </div>
+   <% } else{ %>
+    <div class="navbar-wrapper">
         <div class="logo">NAQSH</div>
         <div class="nav-links-wrapper">
           <a href="/">Home</a>
@@ -22,6 +34,7 @@
           <a href="/profile"><img src="/images/profile-img.webp" alt="profile-img"></a>
         </div>
       </div>
+   <% } %>
       <!-- hero-section -->
       <div class="hero-sec-wrapper">
         <div class="hero-content">
@@ -91,7 +104,34 @@
         </div>
       </div>
       <!-- footer -->
-       <div class="footer-wrapper"></div>
+       <div class="footer-wrapper">
+        <div class="left-footer-wrapper">
+          <div class="footer-title">
+            <h1>NAQSH</h1>
+          </div>
+            <div class="social-media-icons-wrapper">
+              <a href=""><i class="ri-instagram-line"></i></a> 
+              <a href=""><i class="ri-facebook-line"></i></a>
+              <a href=""><i class="ri-whatsapp-line"></i></a>          
+            </div>
+        </div>
+        <div class="right-footer-wrapper">
+          <div class="links-wrapper">
+            <a href="/">Home</a>
+            <a href="/products">Products</a>
+            <a href="/profile">Profile</a>
+            <a href="">FAQ</a>
+          </div>
+          <div class="shop-location-wrapper">
+            <div class="location-wrap">
+              <i class="ri-map-pin-line"></i>
+              <div class="location-info">
+                <p>University Road, Peshawar, Pakistan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
     </div>
   </body>
 </html>
