@@ -169,3 +169,15 @@ body {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
+.delete-btn > form > button {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}

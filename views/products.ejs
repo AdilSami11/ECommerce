@@ -8,7 +8,19 @@
   </head>
   <body>
     <div class="products-page-wrapper">
-      <div class="navbar-wrapper">
+        <% if(user.isAdmin === true){ %>
+        <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (0)</a>
+          <a href="/cart">Add Products</a>
+          <a href="/profile"><img src="/images/profile-img.webp" alt="profile-img"></a>
+        </div>
+      </div>
+   <% } else{ %>
+    <div class="navbar-wrapper">
         <div class="logo">NAQSH</div>
         <div class="nav-links-wrapper">
           <a href="/">Home</a>
@@ -17,6 +29,7 @@
           <a href="/profile"><img src="/images/profile-img.webp" alt="profile-img"></a>
         </div>
       </div>
+   <% } %>
       <div class="main-poducts-wrapper">
         <div class="products-title-wrapper">
           <h1>ALL BAGS</h1>

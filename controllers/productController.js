@@ -33,7 +33,7 @@ const postAddProduct = async (req, res) => {
 const getProducts = async (req, res) => {
   try {
     const getAllProducts = await productModel.find();
-    res.render('products', { getAllProducts });
+    res.render('products', { getAllProducts, user: req.user });
   } catch (error) {
     res.send('Error :', error);
   }
@@ -46,9 +46,26 @@ const getProductById = async (req, res) => {
     const { id } = req.params;
     const product = await productModel.findById(id);
     if (!product) return res.status(404).send('Product not found');
-    res.render('productById', { product });
+    res.render('productById', {
+      product: product,
+      user: req.user,
+    });
   } catch (error) {
     res.send('Error : ', error);
+  }
+};
+
+const deleteProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleteItem = await productModel.findByIdAndDelete(id);
+    if (!deleteItem) {
+      return res.status(404).send('Product not found');
+    }
+    res.redirect('/products');
+  } catch (error) {
+    console.log(error);
+    res.send('Error Occured : ', error);
   }
 };
 
@@ -57,4 +74,5 @@ module.exports = {
   postAddProduct,
   getProducts,
   getProductById,
+  deleteProduct,
 };

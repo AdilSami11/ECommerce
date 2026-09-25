@@ -197,7 +197,10 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
 }
-
+.prod-info a {
+  text-decoration: none;
+  color: #ffffff;
+}
 .prod-info button {
   width: 100%;
   padding: 11px 15px;
