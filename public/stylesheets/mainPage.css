@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 html,
 body {
@@ -155,6 +155,11 @@ body {
   border: 1px solid #eee;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 .card-img {
   width: 100%;
@@ -169,6 +174,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover .card-img img {
+  transform: scale(1.05);
 }
 .card-info {
   /* background-color: violet; */
@@ -177,6 +186,15 @@ body {
   font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 10px;
+}
+.card-info #product-price {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 3px 10px;
+  background-color: #a67c52;
+  color: #ffffff;
+  border-radius: 4px;
+  display: inline-block;
 }
 .card-info #product-desc {
   max-width: 450px;
@@ -199,6 +217,10 @@ body {
   padding: 12px 25px;
   border-radius: 4px;
   transition: 0.2s ease-in-out;
+}
+.view-more-btn button:hover {
+  background-color: #a67c52;
+  cursor: pointer;
 }
 
 .chooseUs-main-section {

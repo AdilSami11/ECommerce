@@ -15,7 +15,7 @@
           <a href="/">Home</a>
           <a href="/products">Products</a>
           <a href="/cart">Cart (0)</a>
-          <a href="/cart">Add Products</a>
+          <a href="/products/add">Add Products</a>
           <a href="/profile"><img src="/images/profile-img.webp" alt="profile-img"></a>
         </div>
       </div>
@@ -60,8 +60,9 @@
                     <h2><%= prod.name %></h2>
                     <p><%= prod.description %></p>
                     <p id="prod-price"> Rs. <%= prod.price %></p>
-                    <button><a href="/products/<%=prod._id %>">View Product</a></button>
-
+                    <a href="/products/<%=prod._id %>">
+                      <button>View Product</button>
+                    </a>
                   </div>
                 </div>
          <% }) %>
