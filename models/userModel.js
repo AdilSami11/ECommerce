@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const userSchema = mongoose.Schema({
   name: {
     type: String,
@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
   cart: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'product',
+      ref: "product",
     },
   ],
   isAdmin: {
@@ -31,8 +31,8 @@ const userSchema = mongoose.Schema({
   contact: Number,
   picture: {
     type: String,
-    default: '../public/images/profile-img.webp',
+    default: "../public/images/profile-img.webp",
   },
 });
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model("user", userSchema);

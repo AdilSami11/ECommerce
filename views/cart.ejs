@@ -30,8 +30,8 @@
     >No Product has been Added to Cart.</h2>
 
 <% } else { %>
-
-  <div class="cart-items-wrapper">
+     <div class="main-cart">
+       <div class="cart-items-wrapper">
     <% cart.items.forEach(function(cartItem) { %>
       <div class="cart-item">
         <div class="cart-item-img-wrapper">
@@ -49,7 +49,42 @@
          </div>
       </div>
     <% }) %>
-  </div>
+       </div>
+       <div class="order-summery-wrapper">
+          <h3>Order Summary</h3>
+
+     <p>
+    Total Items:
+    <%= cart.items.length %>
+    </p>
+
+    <p>
+    Subtotal:
+    Rs. <%= subTotal %>
+    </p>
+
+    <p>
+    Discount:
+    - Rs. <%= totalDiscount %>
+        </p>
+
+        <hr>
+  
+  <h3>
+    Total:
+    Rs. <%= total %>
+  </h3>
+
+        <a href="/products">
+    Continue Shopping
+        </a>
+
+        <a href="/checkout">
+    Checkout
+        </a>
+       </div>
+     </div>
+ 
 <% } %>
     </div>
   </body>

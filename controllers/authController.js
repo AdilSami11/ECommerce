@@ -1,9 +1,9 @@
-const userModel = require('../models/userModel');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const userModel = require("../models/userModel");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const getRegistration = (req, res) => {
-  res.render('register');
+  res.render("register");
 };
 
 // Post registration (form submission)
@@ -16,7 +16,7 @@ const postRegistration = async (req, res) => {
 
     if (existingUser) {
       return res.send(
-        'Email already registered! <a href="/register">Try again</a>'
+        'Email already registered! <a href="/register">Try again</a>',
       );
     }
 
@@ -29,16 +29,16 @@ const postRegistration = async (req, res) => {
       password: hashPassword,
     });
     // Send confirmation or redirect
-    res.redirect('/auth/login');
+    res.redirect("/auth/login");
   } catch (error) {
-    res.send('Error in registration: ' + error.message);
+    res.send("Error in registration: " + error.message);
   }
 };
 
 // --- LOGIN LOGIC ---
 
 const getLogin = (req, res) => {
-  res.render('login');
+  res.render("login");
 };
 
 const postLogin = async (req, res) => {
@@ -48,7 +48,7 @@ const postLogin = async (req, res) => {
 
     if (!checkUser)
       return res.send(
-        'Invalid credentials! <a href="/auth/login">Try again</a>'
+        'Invalid credentials! <a href="/auth/login">Try again</a>',
       );
 
     // matching the password with existing user to newly enterd password:
@@ -56,7 +56,7 @@ const postLogin = async (req, res) => {
     const isMatch = await bcrypt.compare(password, checkUser.password);
     if (!isMatch)
       return res.send(
-        'Invalid credentials! <a href="/auth/login">Try again</a>'
+        'Invalid credentials! <a href="/auth/login">Try again</a>',
       );
 
     // Assigning Cookie to Correct User
@@ -64,21 +64,21 @@ const postLogin = async (req, res) => {
       {
         id: checkUser._id,
       },
-      process.env.Secret_Key || 'mysecretkey'
+      process.env.Secret_Key || "mysecretkey",
     );
     // sending Cookie to Ui/Frontend
-    res.cookie('token', token);
-    res.redirect('/');
+    res.cookie("token", token);
+    res.redirect("/");
   } catch (error) {
-    res.send('Error', error);
+    res.send("Error", error);
   }
 };
 
 // LOGOUT LOGIC:
 
 const logOut = async (req, res) => {
-  res.clearCookie('token');
-  res.redirect('/auth/login');
+  res.clearCookie("token");
+  res.redirect("/auth/login");
 };
 
 module.exports = {

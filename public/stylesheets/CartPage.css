@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 html,
 body {
@@ -56,17 +56,18 @@ body {
 .nav-links-wrapper a:hover {
   color: #a67c52;
 }
-
-.cart-items-wrapper {
+.main-cart {
   width: 100%;
-  /* min-height: 90vh; */
+  display: flex;
+}
+.cart-items-wrapper {
+  width: 80%;
   /* background-color: yellow; */
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
   gap: 20px;
   flex-wrap: wrap;
-  padding: 20px 60px;
+  padding: 20px 50px;
 }
 
 .cart-title-wrapper {
@@ -78,17 +79,19 @@ body {
   font-weight: 400;
 }
 .cart-item {
-  /* border: 2px solid red; */
-  padding: 30px 10px;
+  width: 100%;
+  padding: 30px 20px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   gap: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.173);
 }
 
 .cart-item-img-wrapper {
-  height: 220px;
-  width: 100%;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -100,9 +103,9 @@ body {
   object-fit: cover;
 }
 
-/* .cart-item-details-wrapper {
-  background-color: rgb(10, 147, 104);
-} */
+.cart-item-details-wrapper {
+  padding: 10px 0px;
+}
 .cart-item-details-wrapper h2 {
   color: #1f1f1f;
   font-size: 1.2rem;
@@ -129,4 +132,17 @@ body {
 
 .cart-item-details-wrapper .cart-delete-btn form > button:hover {
   background-color: #a67c52;
+}
+
+.order-summery-wrapper {
+  width: 20%;
+  height: fit-content;
+  margin: 20px 40px 20px 0;
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.173);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
 }

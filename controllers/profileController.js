@@ -1,8 +1,8 @@
-const userModel = require('../models/userModel');
+const userModel = require("../models/userModel");
 
 // get the profile page + info
 const getProfile = async (req, res) => {
-  res.render('profile', {
+  res.render("profile", {
     user: req.user,
   });
 };
@@ -10,7 +10,7 @@ const getProfile = async (req, res) => {
 //get profile and update the info:
 
 const getUpdateProfile = async (req, res) => {
-  res.render('updateProfile', {
+  res.render("updateProfile", {
     user: req.user,
   });
 };
@@ -22,10 +22,10 @@ const postUpdateProfile = async (req, res) => {
       email,
     });
     // console.log(updateUserInfo);
-    res.redirect('/profile');
+    res.redirect("/profile");
   } catch (error) {
     console.log(error);
-    res.send('Something Error Occured.', error);
+    res.send("Something Error Occured.", error);
   }
 };
 

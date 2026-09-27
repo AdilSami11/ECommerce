@@ -1,12 +1,12 @@
-const cartModel = require('../models/cartModel');
-const productModel = require('../models/productModel');
+const cartModel = require("../models/cartModel");
+const productModel = require("../models/productModel");
 
 const addToCart = async (req, res) => {
   try {
     const { id } = req.params; //find the selected by id product in product database:
     const product = await productModel.findById(id);
 
-    if (!product) return res.status(404).send('Product not found');
+    if (!product) return res.status(404).send("Product not found");
     //debugging:
     console.log(product);
     // res.redirect('/products');
@@ -28,7 +28,7 @@ const addToCart = async (req, res) => {
       });
     } else {
       const existingItem = cart.items.find(
-        (item) => item.product.toString() === product._id.toString()
+        (item) => item.product.toString() === product._id.toString(),
       );
 
       if (existingItem) {
@@ -42,10 +42,10 @@ const addToCart = async (req, res) => {
       await cart.save();
     }
 
-    res.redirect('/cart');
+    res.redirect("/cart");
   } catch (error) {
     console.log(error);
-    res.status(500).send('Error adding product to cart');
+    res.status(500).send("Error adding product to cart");
   }
 };
 
@@ -55,15 +55,33 @@ const getCarts = async (req, res) => {
   try {
     const cart = await cartModel
       .findOne({ user: req.user.id })
-      .populate('items.product');
+      .populate("items.product");
 
     if (!cart) {
-      return res.render('cart', { cart: null });
+      return res.render("cart", { cart: null });
     }
-    res.render('cart', { cart });
+
+    let subTotal = 0;
+    let totalDiscount = 0;
+    cart.items.forEach((item) => {
+      const product = item.product;
+      const quantity = item.quantity;
+      const originalPrice = product.price;
+
+      const discountAmount = (originalPrice * product.discount) / 100;
+
+      const discountedPrice = originalPrice - discountAmount;
+
+      subTotal += originalPrice * quantity;
+
+      totalDiscount += discountAmount * quantity;
+    });
+    const total = subTotal - totalDiscount;
+
+    res.render("cart", { cart, subTotal, totalDiscount, total });
   } catch (error) {
     console.log(error);
-    res.status(500).send('Error loading cart');
+    res.status(500).send("Error loading cart");
   }
 };
 
@@ -76,17 +94,17 @@ const deleteCartItem = async (req, res) => {
       user: req.user.id,
     }); // finding the user and then his cart.
     if (!checkCart) {
-      return res.redirect('/');
+      return res.redirect("/");
     }
 
     checkCart.items = checkCart.items.filter(
-      (item) => item.product.toString() !== id
+      (item) => item.product.toString() !== id,
     ); // filtering the items in items obj and then searching for clicked Product by (id) and also conv the ObjId of product so string === string
     await checkCart.save();
-    res.redirect('/cart'); // relocating to cart page as item removes.
+    res.redirect("/cart"); // relocating to cart page as item removes.
   } catch (error) {
     console.log(error);
-    res.status(500).send('Error Deleting cart');
+    res.status(500).send("Error Deleting cart");
   }
 };
 
