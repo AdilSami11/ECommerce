@@ -78,7 +78,13 @@ const getCarts = async (req, res) => {
     });
     const total = subTotal - totalDiscount;
 
-    res.render("cart", { cart, subTotal, totalDiscount, total });
+    res.render("cart", {
+      cart,
+      subTotal,
+      totalDiscount,
+      total,
+      user: req.user,
+    });
   } catch (error) {
     console.log(error);
     res.status(500).send("Error loading cart");

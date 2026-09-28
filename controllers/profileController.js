@@ -1,5 +1,5 @@
 const userModel = require("../models/userModel");
-
+const multer = require("multer");
 // get the profile page + info
 const getProfile = async (req, res) => {
   res.render("profile", {
@@ -16,11 +16,16 @@ const getUpdateProfile = async (req, res) => {
 };
 const postUpdateProfile = async (req, res) => {
   try {
+    // console.log("BODY:", req.body);
+    // console.log("FILE:", req.file);
     const { name, email } = req.body;
+
     const updateUserInfo = await userModel.findOneAndUpdate(req.user._id, {
       name,
       email,
+      profile: req.file ? req.file.filename : undefined,
     });
+
     // console.log(updateUserInfo);
     res.redirect("/profile");
   } catch (error) {

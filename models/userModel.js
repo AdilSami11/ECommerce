@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema({
   contact: Number,
   picture: {
     type: String,
-    default: "../public/images/profile-img.webp",
+    default: "/uploads/profile-img.webp",
   },
 });
 

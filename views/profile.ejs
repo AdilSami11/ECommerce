@@ -15,7 +15,7 @@
           <a href="/products">Products</a>
           <a href="/cart">Cart (NaN)</a>
           <a href="/profile"
-            ><img src="/images/profile-img.webp" alt="profile-img"
+            ><img src="/uploads/<%= user.picture %>" alt="profile-img"
           /></a>
         </div>
       </div>
@@ -25,7 +25,7 @@
       <div class="profile-details-wrapper">
         <div class="profile-card">
           <div class="profile-img-wrapper">
-            <img src="/images/profile-img.webp" alt="profile-img" />
+            <img src="/uploads/<%= user.picture %>" alt="profile-img" />
           </div>
           <div class="profile-info-wrapper">
             <h3>Name : <%= user.name %></h3>

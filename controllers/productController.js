@@ -1,8 +1,8 @@
-const productModel = require('../models/productModel');
+const productModel = require("../models/productModel");
 
 //get method
 const getAddProduct = (req, res) => {
-  res.render('createProduct');
+  res.render("createProduct");
 };
 
 // post method
@@ -20,11 +20,11 @@ const postAddProduct = async (req, res) => {
       description,
     });
     res.send(
-      'Product created successfully! <a href="/products/add">Add Another</a> | <a href="/">Go to Shop</a>'
+      'Product created successfully! <a href="/products/add">Add Another</a> | <a href="/">Go to Shop</a>',
     );
     console.log(addProduct);
   } catch (error) {
-    res.send('Error', error);
+    res.send("Error", error);
   }
 };
 
@@ -33,9 +33,12 @@ const postAddProduct = async (req, res) => {
 const getProducts = async (req, res) => {
   try {
     const getAllProducts = await productModel.find();
-    res.render('products', { getAllProducts, user: req.user });
+    res.render("products", {
+      getAllProducts,
+      user: req.user,
+    });
   } catch (error) {
-    res.send('Error :', error);
+    res.send("Error :", error);
   }
 };
 
@@ -45,13 +48,13 @@ const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await productModel.findById(id);
-    if (!product) return res.status(404).send('Product not found');
-    res.render('productById', {
+    if (!product) return res.status(404).send("Product not found");
+    res.render("productById", {
       product: product,
       user: req.user,
     });
   } catch (error) {
-    res.send('Error : ', error);
+    res.send("Error : ", error);
   }
 };
 
@@ -60,12 +63,12 @@ const deleteProduct = async (req, res) => {
     const { id } = req.params;
     const deleteItem = await productModel.findByIdAndDelete(id);
     if (!deleteItem) {
-      return res.status(404).send('Product not found');
+      return res.status(404).send("Product not found");
     }
-    res.redirect('/products');
+    res.redirect("/products");
   } catch (error) {
     console.log(error);
-    res.send('Error Occured : ', error);
+    res.send("Error Occured : ", error);
   }
 };
 
