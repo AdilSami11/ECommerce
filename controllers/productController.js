@@ -32,10 +32,23 @@ const postAddProduct = async (req, res) => {
 
 const getProducts = async (req, res) => {
   try {
-    const getAllProducts = await productModel.find();
+    const { sort } = req.query;
+    let sortOption = {};
+    if (sort === "price-low") {
+      sortOption = { price: 1 };
+    }
+    if (sort === "price-high") {
+      sortOption = { price: -1 };
+    }
+    if (sort === "discount") {
+      sortOption = { discount: -1 };
+    }
+    const getAllProducts = await productModel.find().sort(sortOption);
+
     res.render("products", {
       getAllProducts,
       user: req.user,
+      sort,
     });
   } catch (error) {
     res.send("Error :", error);

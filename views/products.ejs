@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/productsPage.css" />
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
     <title>Shop - Products</title>
   </head>
   <body>
@@ -38,18 +42,29 @@
             every journey.
           </p>
         </div>
+        <!-- filteration -->
         <div class="products-filteraion-wrapper">
-          <label for="sort">Sort By</label>
+          <form action="/products" method="GET" >
 
-          <select id="sort" name="sort">
-            <option value="">Default</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="discount">Highest Discount</option>
-          </select>
+     <label for="sort">Sort By</label>
 
-          <button type="submit">Apply</button>
+     <select id="sort" name="sort">
+        <option value="">Default</option>
+        <option value="price-low" <%= sort === 'price-low' ? 'selected' : '' %>>
+        Price: Low to High
+        </option>
+       <option value="price-high" <%= sort === 'price-high' ? 'selected' : '' %>>
+        Price: High to Low
+       </option>
+
+       <option value="discount" <%= sort === 'discount' ? 'selected' : '' %>>
+        Highest Discount
+       </option>
+       </select>
+     <button type="submit">Apply</button>
+   </form>
         </div>
+        <!-- products cards wrapper -->
         <div class="products-cards-wrapper">
           <% getAllProducts.forEach(function(prod){ %>
                 <div class="product-card">
@@ -69,7 +84,7 @@
         </div>
       </div>
       <!-- footer -->
-      <div class="footer-wrapper"></div>
+       <%- include('./partials/footer.ejs') %>
     </div>
   </body>
 </html>
