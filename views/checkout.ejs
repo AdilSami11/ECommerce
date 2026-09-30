@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/checkout.css" />
+    <title>Checkout</title>
+  </head>
+  <body>
+    <div class="checkout-main-page">
+           <!-- navbar wrapper -->
+         <% if(user.isAdmin === true){ %>
+        <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (0)</a>
+          <a href="/cart">Add Products</a>
+          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
+        </div>
+      </div>
+   <% } else{ %>
+    <div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (0)</a>
+          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
+        </div>
+      </div>
+   <% } %>
+   <!-- main checkout wrapper -->
+
+      <div class="checkout-wrapper"></div>
+
+      <!-- footer -->
+      <%- include("partials/footer") %>
+    </div>
+  </body>
+</html>

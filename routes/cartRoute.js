@@ -1,13 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const cartController = require('../controllers/cartController');
-const loggedIn = require('../utils/authMiddleWare');
+const cartController = require("../controllers/cartController");
+const loggedIn = require("../utils/authMiddleWare");
 
 // create cart by a loggedIn User:
-router.post('/add/:id', loggedIn, cartController.addToCart); // it will be /cart/add/id
+router.post("/add/:id", loggedIn, cartController.addToCart); // it will be /cart/add/id
 // get all carts:
-router.get('/', loggedIn, cartController.getCarts); // it will be /cart + / = /cart
+router.get("/", loggedIn, cartController.getCarts); // it will be /cart + / = /cart
 //delete cart item:
-router.post('/delete/:id', loggedIn, cartController.deleteCartItem);
+router.post("/delete/:id", loggedIn, cartController.deleteCartItem);
 
 module.exports = router;
