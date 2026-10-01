@@ -24,10 +24,6 @@ const userSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  orders: {
-    type: Array,
-    default: [],
-  },
   contact: Number,
   picture: {
     type: String,

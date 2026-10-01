@@ -65,4 +65,105 @@ body {
   width: 100%;
   min-height: 90vh;
   background-color: yellowgreen;
+  display: flex;
+}
+.checkout-title-wrapper {
+  margin-top: 15px;
+  /* background-color: #a67c52; */
+  text-align: center;
+}
+.checkout-title-wrapper h1 {
+  font-size: 2.3rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+}
+.checkout-left-wrapper {
+  width: 70%;
+  padding: 40px 10px;
+  /* background-color: yellow; */
+}
+
+.checkout-left-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+.checkout-left-wrapper label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.checkout-left-wrapper input {
+  width: 100%;
+  height: 45px;
+  padding: 0 14px;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  margin-bottom: 10px;
+}
+.checkout-left-wrapper input:focus {
+  border-color: #222;
+}
+.checkout-left-wrapper input::placeholder {
+  color: #999;
+}
+
+.checkout-left-wrapper form h3 {
+  margin: 30px 0 15px 0;
+  /* padding-top: 25px; */
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.checkout-left-wrapper form button {
+  max-width: 120px;
+  padding: 10px 15px;
+  border: none;
+  margin-top: 10px;
+  background-color: #1f1f1f;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.checkout-right-wrapper {
+  width: 30%;
+  padding: 40px 10px;
+  background-color: rgb(24, 8, 114);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.order-items-wrapper {
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  /* background-color: #a67c52; */
+}
+.order-item-info h4 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.order-item-info span {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.order-item p {
+  background-color: #a67c52;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px;
 }
