@@ -14,17 +14,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  cart: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "product",
-    },
-  ],
   isAdmin: {
     type: Boolean,
     default: false,
   },
-  contact: Number,
   picture: {
     type: String,
     default: "/uploads/profile-img.webp",

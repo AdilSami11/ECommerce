@@ -8,7 +8,7 @@ const addToCart = async (req, res) => {
 
     if (!product) return res.status(404).send("Product not found");
     //debugging:
-    console.log(product);
+    // console.log(product);
     // res.redirect('/products');
 
     const cart = await cartModel.findOne({

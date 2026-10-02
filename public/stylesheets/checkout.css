@@ -11,7 +11,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background-color: #f8f6f1;
+  background-color: #f8f6f1d9;
 }
 
 .checkout-main-page {
@@ -64,7 +64,7 @@ body {
 .checkout-wrapper {
   width: 100%;
   min-height: 90vh;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
   display: flex;
 }
 .checkout-title-wrapper {
@@ -79,7 +79,7 @@ body {
 }
 .checkout-left-wrapper {
   width: 70%;
-  padding: 40px 10px;
+  padding: 40px 50px;
   /* background-color: yellow; */
 }
 
@@ -129,14 +129,14 @@ body {
 .checkout-right-wrapper {
   width: 30%;
   padding: 40px 10px;
-  background-color: rgb(24, 8, 114);
+  /* background-color: rgb(24, 8, 114); */
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 40px;
 }
 .order-items-wrapper {
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
   display: flex;
   align-items: center;
   justify-content: center;
