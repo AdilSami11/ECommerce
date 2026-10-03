@@ -62,10 +62,17 @@ body {
 .main-cart {
   width: 100%;
   display: flex;
+  min-height: 90vh;
+}
+
+.empty-cart {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cart-items-wrapper {
   width: 80%;
-  /* background-color: yellow; */
   display: flex;
   flex-direction: column;
   gap: 20px;

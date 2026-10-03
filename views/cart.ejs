@@ -25,13 +25,9 @@
       <h2>Your Cart.</h2>
     </div>
      <% if (!cart || cart.items.length === 0) { %>
-
-  <h2 style=" 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);"
-    >No Product has been Added to Cart.</h2>
+    <div class="empty-cart">
+       <h2>No Product has been Added to Cart.</h2>
+    </div>
 
 <% } else { %>
      <div class="main-cart">

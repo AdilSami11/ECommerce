@@ -58,11 +58,12 @@ const getCarts = async (req, res) => {
       .populate("items.product");
 
     if (!cart) {
-      return res.render("cart", { cart: null });
+      return res.redirect("/products");
     }
 
     let subTotal = 0;
     let totalDiscount = 0;
+    // **********************
     cart.items.forEach((item) => {
       const product = item.product;
       const quantity = item.quantity;
@@ -76,6 +77,8 @@ const getCarts = async (req, res) => {
 
       totalDiscount += discountAmount * quantity;
     });
+
+    // --------------------------------------------------
     const total = subTotal - totalDiscount;
 
     res.render("cart", {
