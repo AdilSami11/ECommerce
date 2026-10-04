@@ -17,7 +17,8 @@
         <div class="nav-links-wrapper">
           <a href="/">Home</a>
           <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cart.items.length %>)</a>
+          <a href="/cart">Cart (<%= cart ? cart.items.reduce((total, item) => total + item.quantity, 0) : 0 %>)</a>
+          <a href="/order">Order's</a>
           <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
         </div>
       </div>

@@ -12,6 +12,7 @@ const authRoute = require("./routes/authRoute");
 const cartRoute = require("./routes/cartRoute");
 const profileRoute = require("./routes/userProfileRoute");
 const checkoutRoute = require("./routes/checkoutRoute");
+const orderRoute = require("./routes/orderRoute");
 dotenv.config();
 // Import your new Auth Routes
 // Database Connection
@@ -30,6 +31,7 @@ app.use("/products", productRoute);
 app.use("/cart", cartRoute);
 app.use("/profile", profileRoute);
 app.use("/checkout", checkoutRoute);
+app.use("/order", orderRoute);
 // Root(main Page) Route
 app.get("/", isLoggedIn, async (req, res) => {
   try {

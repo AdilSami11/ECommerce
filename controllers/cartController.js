@@ -54,11 +54,17 @@ const addToCart = async (req, res) => {
 const getCarts = async (req, res) => {
   try {
     const cart = await cartModel
-      .findOne({ user: req.user.id })
+      .findOne({ user: req.user._id })
       .populate("items.product");
 
     if (!cart) {
-      return res.redirect("/products");
+      return res.render("cart", {
+        cart: null,
+        subTotal: 0,
+        totalDiscount: 0,
+        total: 0,
+        user: req.user,
+      });
     }
 
     let subTotal = 0;
