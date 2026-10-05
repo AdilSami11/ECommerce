@@ -4,12 +4,12 @@ const orderModel = require("../models/orderModel");
 
 const getOrder = async (req, res) => {
   try {
-    const orderItems = await orderModel
+    const orders = await orderModel
       .find({ user: req.user._id })
       .populate("items.product");
-    console.log(orderItems);
+    console.log(orders);
     res.render("orders", {
-      orderItems,
+      orders,
       user: req.user,
     });
   } catch (error) {
