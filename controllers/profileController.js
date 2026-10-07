@@ -1,10 +1,20 @@
 const userModel = require("../models/userModel");
 const multer = require("multer");
+const cartModel = require("../models/cartModel");
 // get the profile page + info
 const getProfile = async (req, res) => {
-  res.render("profile", {
-    user: req.user,
-  });
+  try {
+    const userCart = await cartModel.findOne({ user: req.user._id });
+    const cartCount = userCart ? userCart.items.length : 0;
+
+    res.render("profile", {
+      user: req.user,
+      cartCount,
+    });
+  } catch (error) {
+    consoel.log(error);
+    res.status(401).send("Error loading Profile Page.");
+  }
 };
 
 //get profile and update the info:
@@ -14,6 +24,9 @@ const getUpdateProfile = async (req, res) => {
     user: req.user,
   });
 };
+
+// postUpdate Logic:
+
 const postUpdateProfile = async (req, res) => {
   try {
     // console.log("BODY:", req.body);
@@ -23,10 +36,10 @@ const postUpdateProfile = async (req, res) => {
     const updateUserInfo = await userModel.findOneAndUpdate(req.user._id, {
       name,
       email,
-      profile: req.file ? req.file.filename : undefined,
+      picture: req.file ? req.file.filename : undefined,
     });
 
-    // console.log(updateUserInfo);
+    console.log(updateUserInfo);
     res.redirect("/profile");
   } catch (error) {
     console.log(error);

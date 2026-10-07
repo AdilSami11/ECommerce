@@ -11,6 +11,7 @@ const getCheckout = async (req, res) => {
       return res.redirect("/cart");
     }
 
+    const cartCount = cart ? cart.items.length : 0;
     let subTotal = 0;
     cart.items.forEach((item) => {
       subTotal = subTotal + item.product.price * item.quantity;
@@ -24,6 +25,7 @@ const getCheckout = async (req, res) => {
       subTotal,
       shipping,
       total,
+      cartCount,
     });
   } catch (error) {
     console.log(error);

@@ -1,5 +1,5 @@
 const productModel = require("../models/productModel");
-
+const cartModel = require("../models/cartModel");
 //get method
 const getAddProduct = (req, res) => {
   res.render("createProduct");
@@ -45,10 +45,14 @@ const getProducts = async (req, res) => {
     }
     const getAllProducts = await productModel.find().sort(sortOption);
 
+    const userCart = await cartModel.findOne({ user: req.user._id });
+    const cartCount = userCart ? userCart.items.length : 0;
+
     res.render("products", {
       getAllProducts,
       user: req.user,
       sort,
+      cartCount,
     });
   } catch (error) {
     res.send("Error :", error);
@@ -62,9 +66,12 @@ const getProductById = async (req, res) => {
     const { id } = req.params;
     const product = await productModel.findById(id);
     if (!product) return res.status(404).send("Product not found");
+    const userCart = await cartModel.findOne({ user: req.user._id });
+    const cartCount = userCart ? userCart.items.length : 0;
     res.render("productById", {
       product: product,
       user: req.user,
+      cartCount,
     });
   } catch (error) {
     res.send("Error : ", error);

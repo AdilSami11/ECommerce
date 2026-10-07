@@ -6,6 +6,7 @@ const connectDB = require("./config/db");
 const dotenv = require("dotenv");
 const isLoggedIn = require("./utils/authMiddleWare");
 const productModel = require("./models/productModel");
+const cartModel = require("./models/cartModel");
 // routess.....
 const productRoute = require("./routes/productRoute");
 const authRoute = require("./routes/authRoute");
@@ -36,10 +37,12 @@ app.use("/order", orderRoute);
 app.get("/", isLoggedIn, async (req, res) => {
   try {
     const product = await productModel.find().limit(3);
-
+    const userCart = await cartModel.findOne({ user: req.user._id });
+    const cartCount = userCart ? userCart.items.length : 0;
     res.render("index", {
       user: req.user,
       product,
+      cartCount,
     });
   } catch (error) {
     res.send("Error at rendering product from Db...", error);
