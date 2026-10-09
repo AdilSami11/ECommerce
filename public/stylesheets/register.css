@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 html,
 body {
@@ -69,4 +69,42 @@ form > input {
 .btns-wrapper button:hover {
   background-color: #3d30cb;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .main-wrapper {
+    padding: 0 10px;
+  }
+  .form-wrapper {
+    max-width: 400px;
+    padding: 60px 10px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.232);
+  }
+  .form-wrapper h2 {
+    font-size: 1.6rem;
+    font-variant: small-caps;
+  }
+  form > input {
+    padding: 12px 10px;
+  }
+  .btns-wrapper button {
+    padding: 11px 25px;
+    border-radius: 5px;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 575px) {
+  .form-wrapper {
+    max-width: 360px;
+    padding: 30px 10px;
+  }
+  .form-wrapper h2 {
+    font-size: 1.4rem;
+  }
+  form > input {
+    padding: 10px;
+  }
+  .btns-wrapper button {
+    padding: 8px 20px;
+  }
 }

@@ -13,28 +13,23 @@
 
   <body>
     <div class="main-page-wrapper">
-    <% if(user.isAdmin === true){ %>
         <div class="navbar-wrapper">
         <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
+        <div class="nav-links-wrapper" id="nav-menu">
           <a href="/">Home</a>
           <a href="/products">Products</a>
           <a href="/cart">Cart (<%= cartCount %>)</a>
-          <a href="/cart">Add Products</a>
+          <% if(user.isAdmin === true) { %>
+            <a href="/cart">Add Products</a>
+          <% } %>
           <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
         </div>
+        <i class="ri-menu-fill" id="menu-toggle"
+          role="button" tabindex="0"
+          aria-label="Toggle navigation"
+          aria-expanded="false" ></i>
       </div>
-   <% } else{ %>
-    <div class="navbar-wrapper">
-        <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cartCount %>)</a>
-          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
-        </div>
-      </div>
-   <% } %>
+   
       <!-- hero-section -->
       <div class="hero-sec-wrapper">
         <div class="hero-content">
@@ -105,5 +100,6 @@
       </div>
      <%- include('./partials/footer.ejs') %>
     </div>
+    <script src="/javascripts/navbarLogic.js" defer></script>
   </body>
 </html>
