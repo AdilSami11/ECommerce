@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/mainPage.css">
+   <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+    <title>Navbar</title>
+</head>
+<body>
+<div class="navbar-wrapper">
+        <div class="logo">NAQSH</div>
+        <div class="nav-links-wrapper" id="nav-menu">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/cart">Cart (<%= cartCount %>)</a>
+          <% if(user.isAdmin === true) { %>
+            <a href="/cart">Add Products</a>
+          <% } %>
+          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
+        </div>
+        <i class="ri-menu-fill" id="menu-toggle"
+          role="button" tabindex="0"
+          aria-label="Toggle navigation"
+          aria-expanded="false" ></i>
+</div>
+</body>
+</html>
