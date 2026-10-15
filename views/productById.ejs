@@ -11,29 +11,7 @@
     <title>Products - Details</title>
   </head>
   <body>
-    <div class="single-product-main-wrapper">
-         <% if(user.isAdmin === true){ %>
-        <div class="navbar-wrapper">
-        <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cartCount %>)</a>
-          <a href="/cart">Add Products</a>
-          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
-        </div>
-      </div>
-   <% } else{ %>
-    <div class="navbar-wrapper">
-        <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cartCount %>)</a>
-          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
-        </div>
-      </div>
-   <% } %>
+         <%- include('./partials/Navbar.ejs') %> 
       <div class="navigate-back-wrapper">
         <a href="/products"><i class="ri-arrow-left-long-line"></i> Back</a>
       </div>
@@ -72,5 +50,6 @@
         </div>
       </div>
     </div>
+        <script src="/javascripts/navbarLogic.js" defer></script>
   </body>
 </html>
