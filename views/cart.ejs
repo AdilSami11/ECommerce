@@ -12,17 +12,8 @@
   </head>
   <body>
     <div class="main-cart-page-wrapper">
-      <div class="navbar-wrapper">
-        <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cart ? cart.items.reduce((total, item) => total + item.quantity, 0) : 0 %>)</a>
-          <a href="/order">Order's</a>
-          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
-        </div>
-      </div>
-       <div class="cart-title-wrapper">
+       <%- include('./partials/Navbar.ejs') %>   
+      <div class="cart-title-wrapper">
       <h2>Your Cart.</h2>
     </div>
      <% if (!cart || cart.items.length === 0) { %>
@@ -66,14 +57,14 @@
 
     <p>
     Discount:
-    - Rs. <%= totalDiscount %>
+    - Rs. <%= totalDiscount.toFixed(0) %>
         </p>
 
         <hr>
   
   <h3>
     Total:
-    Rs. <%= total %>
+    Rs. <%= total.toFixed(0) %>
   </h3>
 
         <a href="/products">
@@ -90,5 +81,6 @@
 <!-- footer -->
   <%- include('./partials/footer.ejs') %>
     </div>
+        <script src="/javascripts/navbarLogic.js" defer></script>
   </body>
 </html>

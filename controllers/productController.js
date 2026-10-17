@@ -34,28 +34,20 @@ const getProducts = async (req, res) => {
   try {
     const { sort } = req.query;
     let sortOption = {};
-    if (sort === "price-low") {
-      sortOption = { price: 1 };
-    }
-    if (sort === "price-high") {
-      sortOption = { price: -1 };
-    }
-    if (sort === "discount") {
-      sortOption = { discount: -1 };
-    }
-    const getAllProducts = await productModel.find().sort(sortOption);
 
-    const userCart = await cartModel.findOne({ user: req.user._id });
-    const cartCount = userCart ? userCart.items.length : 0;
+    if (sort === "price-low") sortOption = { price: 1 };
+    if (sort === "price-high") sortOption = { price: -1 };
+    if (sort === "discount") sortOption = { discount: -1 };
+
+    const getAllProducts = await productModel.find().sort(sortOption);
 
     res.render("products", {
       getAllProducts,
       user: req.user,
       sort,
-      cartCount,
     });
   } catch (error) {
-    res.send("Error :", error);
+    res.status(500).send("Error loading products");
   }
 };
 
@@ -64,17 +56,16 @@ const getProducts = async (req, res) => {
 const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
+
     const product = await productModel.findById(id);
     if (!product) return res.status(404).send("Product not found");
-    const userCart = await cartModel.findOne({ user: req.user._id });
-    const cartCount = userCart ? userCart.items.length : 0;
+
     res.render("productById", {
       product: product,
       user: req.user,
-      cartCount,
     });
   } catch (error) {
-    res.send("Error : ", error);
+    res.status(500).send("Error loading products by ID");
   }
 };
 

@@ -17,9 +17,11 @@
           <a href="/">Home</a>
           <a href="/products">Products</a>
           <a href="/cart">Cart (<%= cartCount %>)</a>
+          <a href="/order">My Orders</a>
           <% if(user.isAdmin === true) { %>
             <a href="/cart">Add Products</a>
           <% } %>
+          
           <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
         </div>
         <i class="ri-menu-fill" id="menu-toggle"

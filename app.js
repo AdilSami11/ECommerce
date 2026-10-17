@@ -5,9 +5,10 @@ const cookieParser = require("cookie-parser");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
 const isLoggedIn = require("./utils/authMiddleWare");
+const cartCountMiddleWare = require("./utils/cartCountMiddleware");
 const productModel = require("./models/productModel");
 const cartModel = require("./models/cartModel");
-// routess.....
+// routess
 const productRoute = require("./routes/productRoute");
 const authRoute = require("./routes/authRoute");
 const cartRoute = require("./routes/cartRoute");
@@ -15,17 +16,15 @@ const profileRoute = require("./routes/userProfileRoute");
 const checkoutRoute = require("./routes/checkoutRoute");
 const orderRoute = require("./routes/orderRoute");
 dotenv.config();
-// Import your new Auth Routes
-// Database Connection
 connectDB();
 
-// Middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-
+app.use(isLoggedIn);
+app.use(cartCountMiddleWare);
 // Routes
 app.use("/auth", authRoute);
 app.use("/products", productRoute);
