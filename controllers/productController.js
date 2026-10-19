@@ -40,11 +40,14 @@ const getProducts = async (req, res) => {
     if (sort === "discount") sortOption = { discount: -1 };
 
     const getAllProducts = await productModel.find().sort(sortOption);
-
+    //Checking if cart have any item:
+    const userCart = await cartModel.findOne({ user: req.user._id });
+    const cartCount = userCart ? userCart.items.length : 0;
     res.render("products", {
-      getAllProducts,
       user: req.user,
       sort,
+      getAllProducts,
+      cartCount,
     });
   } catch (error) {
     res.status(500).send("Error loading products");

@@ -14,64 +14,14 @@
 <body>
 
   <div class="order-main-wrapper">
-
-<!-- Navbar -->
-
-<% if (user.isAdmin === true) { %>
-
-  <div class="navbar-wrapper">
-
-    <div class="logo">NAQSH</div>
-
-    <div class="nav-links-wrapper">
-      <a href="/">Home</a>
-      <a href="/products">Products</a>
-      <a href="/cart">Add Products</a>
-
-      <a href="/profile">
-        <img
-          src="/uploads/<%= user.picture %>"
-          alt="profile-img"
-        >
-      </a>
-    </div>
-
-  </div>
-
-<% } else { %>
-
-  <div class="navbar-wrapper">
-
-    <div class="logo">NAQSH</div>
-
-    <div class="nav-links-wrapper">
-      <a href="/">Home</a>
-      <a href="/products">Products</a>
-      <a href="/cart">Cart (0)</a>
-
-      <a href="/profile">
-        <img
-          src="/uploads/<%= user.picture %>"
-          alt="profile-img"
-        >
-      </a>
-    </div>
-
-  </div>
-
-<% } %>
-
-
+   <!-- Navbar -->
+  <%- include('./partials/Navbar.ejs') %>   
 <!-- Page Title -->
-
 <div class="order-title-wrapper">
-
   <h3>My Orders</h3>
-
   <h2>
     Track and view everything you've ordered
   </h2>
-
 </div>
 
 
@@ -186,7 +136,7 @@
 
 <% } %>
   </div>
-
+    <script src="/javascripts/navbarLogic.js" defer></script>
 </body>
 
 </html>

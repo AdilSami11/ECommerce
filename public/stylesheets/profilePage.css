@@ -164,3 +164,113 @@ body {
   background-color: #a67c52;
   color: #ffffff;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar-wrapper {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .nav-links-wrapper {
+    gap: 20px;
+  }
+  /* ================= PROFILE TITLE ================= */
+
+  .profile-title-wrapper h1 {
+    font-size: 2.2rem;
+  }
+  /* ================= PROFILE CARD ================= */
+
+  .profile-card {
+    max-width: 350px;
+  }
+
+  /* ================= PROFILE IMAGE =================  */
+
+  .profile-img-wrapper {
+    width: 130px;
+    height: 130px;
+  }
+  .profile-details-wrapper h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  .profile-details-wrapper h4 {
+    font-size: 1.1rem;
+  }
+  .logout-btn {
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .navbar-wrapper {
+    position: relative;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .nav-links-wrapper {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 100;
+    padding: 20px;
+    gap: 18px;
+    background-color: #f8f6f1;
+    /* min-height: 100vh; */
+    width: 100%;
+  }
+
+  .navbar-wrapper > i {
+    display: block;
+    font-size: 1.5rem;
+    color: #1f1f1f;
+    cursor: pointer;
+  }
+
+  .nav-links-wrapper.active {
+    display: flex;
+  }
+
+  .nav-links-wrapper a:hover {
+    color: #a67c52;
+  }
+  /* ================= PROFILE TITLE ================= */
+
+  .profile-title-wrapper h1 {
+    font-size: 2rem;
+  }
+  /* ================= PROFILE CARD ================= */
+
+  .profile-card {
+    max-width: 320px;
+    padding: 50px 35px;
+    box-shadow: 0 8px 25px rgba(31, 31, 31, 0.164);
+  }
+
+  /* ================= PROFILE IMAGE =================  */
+
+  .profile-img-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-details-wrapper h3 {
+    font-size: 1.1rem;
+  }
+  .profile-details-wrapper h4 {
+    font-size: 1rem;
+  }
+  .logout-btn {
+    padding: 9px 15px;
+  }
+}

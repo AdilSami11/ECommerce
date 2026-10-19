@@ -83,3 +83,36 @@ form > input {
   background-color: #3d30cb;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .form-wrapper {
+    max-width: 330px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.155);
+    border-radius: 15px;
+    padding: 30px 20px;
+  }
+  .form-wrapper h2 {
+    font-weight: 400;
+  }
+  .updatedprof-img-wrapper img {
+    width: 110px;
+    height: 110px;
+  }
+  .btns-wrapper button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .form-wrapper {
+    max-width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.155);
+    border-radius: 15px;
+    padding: 20px 15px;
+  }
+
+  .updatedprof-img-wrapper img {
+    width: 95px;
+    height: 95px;
+  }
+}

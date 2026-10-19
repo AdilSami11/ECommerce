@@ -4,21 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/profilePage.css" />
-    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Profile</title>
   </head>
   <body>
     <div class="main-profile-wrapper">
-      <div class="navbar-wrapper">
-        <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cartCount %>)</a>
-          <a href="/profile"
-            ><img src="/uploads/<%= user.picture %>" alt="profile-img"
-          /></a>
-        </div>
-      </div>
+      <%- include('./partials/Navbar.ejs') %>
       <div class="profile-title-wrapper">
         <h1>Your Profile</h1>
       </div>
@@ -42,5 +36,6 @@
         </div>
       </div>
     </div>
+    <script src="/javascripts/navbarLogic.js" defer></script>
   </body>
 </html>

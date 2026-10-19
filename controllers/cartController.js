@@ -86,13 +86,16 @@ const getCarts = async (req, res) => {
 
     // --------------------------------------------------
     const total = subTotal - totalDiscount;
-
+    //Checking if cart have any item:
+    const userCart = await cartModel.findOne({ user: req.user._id });
+    const cartCount = userCart ? userCart.items.length : 0;
     res.render("cart", {
+      user: req.user,
       cart,
       subTotal,
       totalDiscount,
       total,
-      user: req.user,
+      cartCount,
     });
   } catch (error) {
     console.log(error);
