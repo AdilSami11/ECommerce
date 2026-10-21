@@ -300,9 +300,6 @@ body {
     display: flex;
   }
 
-  .nav-links-wrapper a:hover {
-    color: #a67c52;
-  }
   .prod-main-title h1 {
     font-size: 1.5rem;
   }

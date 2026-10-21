@@ -8,6 +8,7 @@ const isLoggedIn = require("./utils/authMiddleWare");
 const cartCountMiddleWare = require("./utils/cartCountMiddleware");
 const productModel = require("./models/productModel");
 const cartModel = require("./models/cartModel");
+
 // routess
 const productRoute = require("./routes/productRoute");
 const authRoute = require("./routes/authRoute");
@@ -18,11 +19,13 @@ const orderRoute = require("./routes/orderRoute");
 dotenv.config();
 connectDB();
 
+//Main  Middlewares:
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+
 // Routes
 app.use("/auth", authRoute);
 app.use("/products", productRoute);
@@ -30,6 +33,7 @@ app.use("/cart", cartRoute);
 app.use("/profile", profileRoute);
 app.use("/checkout", checkoutRoute);
 app.use("/order", orderRoute);
+
 // Root(main Page) Route
 app.get("/", isLoggedIn, async (req, res) => {
   try {
@@ -45,6 +49,6 @@ app.get("/", isLoggedIn, async (req, res) => {
     res.send("Error at rendering product from Db...", error);
   }
 });
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running!`);
 });
