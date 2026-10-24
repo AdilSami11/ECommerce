@@ -15,11 +15,11 @@ body {
 .main-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #eef2ff;
+  background-color: #f7f4ef;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6b7280;
+  color: #1c1c1c;
 }
 
 .form-wrapper {
@@ -29,19 +29,20 @@ body {
   background-color: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-  padding: 30px 10px;
+  padding: 50px 10px;
 }
 .icon-wrapper {
   text-align: center;
   margin-bottom: 10px;
+  color: #1c1c1c;
 }
 .form-wrapper .icon-wrapper i {
   font-size: 2rem;
-  color: #111827;
+  color: #1c1c1c;
 }
 .form-wrapper h2 {
   margin-bottom: 30px;
-  color: #111827;
+  color: #1c1c1c;
   text-align: center;
   font-variant: small-caps;
 }
@@ -49,11 +50,11 @@ form {
   padding: 0 5px;
 }
 form > label {
-  color: #111827;
+  color: #292524;
 }
 form > input {
   padding: 8px 10px;
-  border: 2px solid #d1d5db;
+  border: 2px solid #dcd5cb;
   margin-top: 10px;
   width: 100%;
   outline: none;
@@ -71,13 +72,16 @@ form > input {
   padding: 10px 15px;
   border: none;
   border-radius: 7px;
-  background-color: #4f46e5;
-  color: #fff;
+  background-color: #1c1c1c;
+  color: #ffffff;
   transition: all ease-in 0.2s;
 }
 .btns-wrapper button:hover {
-  background-color: #3d30cb;
+  background-color: #3a3530;
   cursor: pointer;
+}
+.btns-wrapper a {
+  color: #8b5e3c;
 }
 
 @media screen and (max-width: 768px) {

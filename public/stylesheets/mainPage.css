@@ -1,22 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #f8f6f1;
+  background-color: #f7f4ef;
   overflow-x: hidden;
+}
+.logo,
+.hero-content h1,
+.title-wrapper h2,
+.choose-us-title h1,
+.chooseUs-card h2,
+.footer-title h1 {
+  font-family: "Playfair Display", serif;
 }
 
 .main-page-wrapper {
   width: 100%;
   min-height: 100vh;
+  background-color: #f7f4ef;
 }
 
 .navbar-wrapper {
@@ -27,6 +36,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+  border-bottom: 1px solid #dcd5cb;
 }
 .navbar-wrapper > i {
   display: none;
@@ -34,7 +44,7 @@ body {
 
 .logo {
   font-size: 1.7rem;
-  color: #1f1f1f;
+  color: #1c1c1c;
 }
 
 .nav-links-wrapper {
@@ -46,7 +56,7 @@ body {
 
 .nav-links-wrapper a {
   text-decoration: none;
-  color: #1f1f1f;
+  color: #1c1c1c;
   transition: all ease-in-out 0.2s;
   display: flex;
   align-items: center;
@@ -61,41 +71,43 @@ body {
 }
 
 .nav-links-wrapper a:hover {
-  color: #a67c52;
+  color: #8b5e3c;
 }
 
 .hero-sec-wrapper {
   width: 100%;
   min-height: 90vh;
-  padding: 60px 50px;
-  background-color: #f8f6f1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
+  justify-content: flex-start;
+  background-image: url("../images/naqsh-hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
-  width: 50%;
+  padding: 60px 50px;
+  /* background-color: #dcd5cb; */
 }
 
 .hero-content .hero-small-text {
   font-size: 1rem;
   letter-spacing: 2px;
-  color: #a67c52;
+  color: #8b5e3c;
   margin-bottom: 15px;
 }
 
 .hero-content h1 {
   font-size: 4.5rem;
   line-height: 1;
-  color: #1f1f1f;
+  color: #1c1c1c;
   margin-bottom: 20px;
 }
 
 .hero-content .hero-description {
   max-width: 450px;
-  color: #6b6b6b;
+  color: #77716a;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -103,7 +115,7 @@ body {
 
 .hero-content .hero-btn {
   display: inline-block;
-  background-color: #1f1f1f;
+  background-color: #1c1c1c;
   padding: 12px 25px;
   text-decoration: none;
   border-radius: 4px;
@@ -112,7 +124,7 @@ body {
 }
 
 .hero-content .hero-btn:hover {
-  background-color: #a67c52;
+  background-color: #8b5e3c;
 }
 
 /* HERO IMAGE */
@@ -141,7 +153,7 @@ body {
 .title-wrapper h2 {
   text-align: center;
   font-size: 2rem;
-  color: #1f1f1f;
+  color: #1c1c1c;
 }
 .cards-wrapper {
   display: flex;
@@ -158,7 +170,7 @@ body {
   flex-direction: column;
   gap: 15px;
   margin-bottom: 40px;
-  border: 1px solid #eee;
+  border: 1px solid #dcd5cb;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: all 0.25s ease-in-out;
@@ -197,14 +209,14 @@ body {
   font-size: 1rem;
   font-weight: 400;
   padding: 3px 10px;
-  background-color: #a67c52;
+  background-color: #8b5e3c;
   color: #ffffff;
   border-radius: 4px;
   display: inline-block;
 }
 .card-info #product-desc {
   max-width: 450px;
-  color: #6b6b6b;
+  color: #77716a;
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -218,14 +230,14 @@ body {
   color: #ffffff;
 }
 .view-more-btn button {
-  background-color: #1f1f1f;
+  background-color: #1c1c1c;
   border: none;
   padding: 12px 25px;
   border-radius: 4px;
   transition: 0.2s ease-in-out;
 }
 .view-more-btn button:hover {
-  background-color: #a67c52;
+  background-color: #8b5e3c;
   cursor: pointer;
 }
 
@@ -243,10 +255,10 @@ body {
 }
 .choose-us-title h1 {
   font-size: 2rem;
-  color: #1f1f1f;
+  color: #1c1c1c;
 }
 .choose-us-title p {
-  color: #6b6b6b;
+  color: #77716a;
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
@@ -264,12 +276,12 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  border: 2px solid #eee;
+  border: 2px solid #dcd5cb;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   transition: all 0.2s ease-in-out;
 }
 .chooseUs-card:hover {
-  background-color: #a67c52;
+  background-color: #8b5e3c;
   color: #ffffff;
 }
 .chooseUs-card #icon,
@@ -287,17 +299,17 @@ body {
 }
 .chooseUs-card h2 {
   font-size: 1.5rem;
-  color: #1f1f1f;
+  color: #1c1c1c;
 }
 .chooseUs-card p {
-  color: #6b6b6b;
+  color: #77716a;
   font-size: 1rem;
   letter-spacing: 1px;
   text-align: center;
 }
 .footer-wrapper {
   padding: 20px 50px;
-  background-color: #1f1f1f;
+  background-color: #1c1c1c;
   margin-top: 60px;
   display: flex;
   align-items: center;
@@ -327,8 +339,8 @@ body {
   transition: all ease-in-out 0.3s;
 }
 .social-media-icons-wrapper a > i:hover {
-  background-color: #a67c52;
-  color: #1f1f1f;
+  background-color: #8b5e3c;
+  color: #1c1c1c;
   cursor: pointer;
 }
 .right-footer-wrapper {
@@ -349,7 +361,7 @@ body {
   transition: all ease-in-out 0.3s;
 }
 .links-wrapper a:hover {
-  color: #a67c52;
+  color: #8b5e3c;
   cursor: pointer;
 }
 .shop-location-wrapper {
@@ -453,7 +465,7 @@ body {
   .card-info #product-price {
     font-weight: 300;
     padding: 3px 10px;
-    background-color: #a67c52f1;
+    background-color: #8b5e3c;
     border-radius: 5px;
   }
   .view-more-btn button {
@@ -518,7 +530,7 @@ body {
     z-index: 100;
     padding: 20px;
     gap: 18px;
-    background-color: #f8f6f1;
+    background-color: #f7f4ef;
     /* min-height: 100vh; */
     width: 100%;
   }
@@ -526,7 +538,7 @@ body {
   .navbar-wrapper > i {
     display: block;
     font-size: 1.5rem;
-    color: #1f1f1f;
+    color: #1c1c1c;
     cursor: pointer;
   }
 
@@ -535,7 +547,7 @@ body {
   }
 
   .nav-links-wrapper a:hover {
-    color: #a67c52;
+    color: #8b5e3c;
   }
 
   .hero-sec-wrapper {
@@ -608,12 +620,12 @@ body {
   .card-info #product-name {
     font-size: 1.2rem;
     font-weight: 400;
-    color: #1f1f1fef;
+    color: #1c1c1c;
   }
   .card-info #product-price {
     font-weight: 300;
     padding: 3px 10px;
-    background-color: #a67c52f1;
+    background-color: #8b5e3c;
     border-radius: 5px;
   }
   .view-more-btn button {
@@ -713,7 +725,7 @@ body {
     font-size: 1.1rem;
   }
   .card-info #product-price {
-    background-color: #a67c52c9;
+    background-color: #8b5e3c;
   }
   .view-more-btn button {
     padding: 10px 15px;

@@ -62,10 +62,13 @@ const getProductById = async (req, res) => {
 
     const product = await productModel.findById(id);
     if (!product) return res.status(404).send("Product not found");
-
+    //Checking if cart have any item:
+    const userCart = await cartModel.findOne({ user: req.user._id });
+    const cartCount = userCart ? userCart.items.length : 0;
     res.render("productById", {
       product: product,
       user: req.user,
+      cartCount,
     });
   } catch (error) {
     res.status(500).send("Error loading products by ID");
