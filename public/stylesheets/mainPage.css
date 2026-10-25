@@ -18,7 +18,8 @@ body {
 .title-wrapper h2,
 .choose-us-title h1,
 .chooseUs-card h2,
-.footer-title h1 {
+.footer-title h1,
+.card-info #product-name {
   font-family: "Playfair Display", serif;
 }
 
@@ -43,8 +44,9 @@ body {
 }
 
 .logo {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   color: #1c1c1c;
+  letter-spacing: 1px;
 }
 
 .nav-links-wrapper {
@@ -64,8 +66,8 @@ body {
   overflow: hidden;
 }
 .nav-links-wrapper a > img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -92,7 +94,7 @@ body {
 }
 
 .hero-content .hero-small-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
   color: #8b5e3c;
   margin-bottom: 15px;
@@ -101,6 +103,7 @@ body {
 .hero-content h1 {
   font-size: 4.5rem;
   line-height: 1;
+  font-weight: 700;
   color: #1c1c1c;
   margin-bottom: 20px;
 }
@@ -108,7 +111,8 @@ body {
 .hero-content .hero-description {
   max-width: 450px;
   color: #77716a;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -127,22 +131,6 @@ body {
   background-color: #8b5e3c;
 }
 
-/* HERO IMAGE */
-
-.hero-img {
-  width: 50%;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .card-main-section {
   padding: 60px 0;
   /* background-color: aquamarine; */
@@ -154,24 +142,26 @@ body {
   text-align: center;
   font-size: 2rem;
   color: #1c1c1c;
+  letter-spacing: 1.2px;
 }
 .cards-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
+  padding: 30px 20px;
+  margin-bottom: 20px;
 }
 
 .card {
-  padding: 30px 5px;
+  padding: 10px 5px;
   /* border: 2px solid red; */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 40px;
-  border: 1px solid #dcd5cb;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  /* border: 1px solid #dcd5cb; */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.201);
   overflow: hidden;
   transition: all 0.25s ease-in-out;
 }
@@ -186,7 +176,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid greenyellow; */
 }
 .card-img img {
   width: 100%;
@@ -199,23 +188,25 @@ body {
 }
 .card-info {
   /* background-color: violet; */
+  padding: 0 5px;
 }
 .card-info #product-name {
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 .card-info #product-price {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   padding: 3px 10px;
-  background-color: #8b5e3c;
+  background-color: #8b5e3ccb;
   color: #ffffff;
   border-radius: 4px;
   display: inline-block;
 }
 .card-info #product-desc {
-  max-width: 450px;
+  max-width: 350px;
+  width: 100%;
   color: #77716a;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -243,8 +234,7 @@ body {
 
 .chooseUs-main-section {
   padding: 70px 10px;
-  margin-top: 20px;
-  /* background-color: tomato; */
+  margin: 20px 0;
 }
 .choose-us-title {
   margin-bottom: 50px;
@@ -255,11 +245,14 @@ body {
 }
 .choose-us-title h1 {
   font-size: 2rem;
+  font-weight: 600;
   color: #1c1c1c;
+  letter-spacing: 1.1px;
 }
 .choose-us-title p {
   color: #77716a;
   font-size: 1.3rem;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 .choose-us-cards-wrapper {
@@ -395,13 +388,13 @@ body {
     gap: 20px;
   }
   .hero-sec-wrapper {
-    padding: 40px 20px;
-    flex-direction: column;
-    gap: 20px;
+    padding: 0px;
+    gap: 0px;
   }
 
   .hero-content {
     width: 100%;
+    padding: 0 20px;
   }
 
   .hero-content .hero-small-text {
@@ -430,11 +423,6 @@ body {
     margin-top: 10px;
   }
 
-  .hero-img {
-    width: 100%;
-    height: 350px;
-    border-radius: 5px;
-  }
   .title-wrapper {
     margin-bottom: 20px;
   }
@@ -551,15 +539,13 @@ body {
   }
 
   .hero-sec-wrapper {
-    padding: 40px 20px;
-    /* background-color: #684a00; */
-    flex-direction: column;
-    gap: 20px;
+    align-items: start;
+    padding: 80px 0px;
+    background-position: center;
   }
 
   .hero-content {
     width: 100%;
-    /* background-color: yellow; */
   }
 
   .hero-content .hero-small-text {
@@ -578,7 +564,7 @@ body {
     font-size: 1.1rem;
     line-height: 1.7;
     max-width: 340px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
   .hero-content .hero-btn {
     display: inline-flex;
@@ -586,12 +572,6 @@ body {
     justify-content: center;
     padding: 8px 20px;
     margin-top: 10px;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: 300px;
-    border-radius: 5px;
   }
 
   .title-wrapper {

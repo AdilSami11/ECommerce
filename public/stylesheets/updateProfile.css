@@ -10,12 +10,13 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: #f7f4ef;
 }
 
 .update-profile-main-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #eef2ff;
+  background-color: #f7f4ef;
   display: flex;
   align-items: center;
   justify-content: center;
