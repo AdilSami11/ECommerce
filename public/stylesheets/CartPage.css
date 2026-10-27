@@ -1,22 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 html,
 body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  background-color: #f7f4ef;
 }
-
+.cart-title-wrapper h2,
+.cart-delete-btn form > button,
+.cart-item-details-wrapper h2,
+.order-summery-wrapper h3,
+.order-summery-wrapper a {
+  font-family: "Playfair Display", serif;
+}
 .main-cart-page-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #f8f6f1;
+  background-color: #f7f4ef;
 }
 
 .main-cart {
@@ -37,6 +44,7 @@ body {
   flex-direction: column;
   gap: 20px;
   flex-wrap: wrap;
+  border-right: 1px solid #77716a;
   padding: 20px 50px;
 }
 
@@ -46,7 +54,7 @@ body {
 }
 .cart-title-wrapper h2 {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 .cart-item {
   width: 100%;
@@ -55,7 +63,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.173);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
 .cart-item-img-wrapper {
@@ -77,14 +85,15 @@ body {
   padding: 10px 0px;
 }
 .cart-item-details-wrapper h2 {
-  color: #1f1f1f;
+  color: #1c1c1c;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 .cart-item-details-wrapper p {
-  color: #6b6b6b;
+  color: #77716a;
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
   margin-bottom: 10px;
 }
@@ -93,7 +102,7 @@ body {
   padding: 7px 10px;
   border: none;
   border-radius: 4px;
-  background-color: #1f1f1ff0;
+  background-color: #1c1c1c;
   color: #ffffff;
   font-size: 0.95rem;
   cursor: pointer;
@@ -101,7 +110,7 @@ body {
 }
 
 .cart-item-details-wrapper .cart-delete-btn form > button:hover {
-  background-color: #a67c52;
+  background-color: #8b5e3c;
 }
 
 .order-summery-wrapper {
@@ -109,12 +118,23 @@ body {
   height: fit-content;
   margin: 20px 40px 20px 0;
   padding: 25px;
-  background-color: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.173);
+  /* background-color: #ffffff; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 15px;
+}
+.order-summery-wrapper h3 {
+  font-weight: 600;
+  color: #1c1c1c;
+}
+.order-summery-wrapper p {
+  font-weight: 400;
+  color: #1c1c1c;
+}
+.order-summery-wrapper a {
+  color: #8b5e3c;
 }
 
 @media screen and (max-width: 768px) {
