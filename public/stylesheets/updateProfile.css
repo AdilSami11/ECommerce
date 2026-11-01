@@ -12,6 +12,10 @@ body {
   width: 100%;
   background-color: #f7f4ef;
 }
+.form-wrapper h2,
+form > label {
+  font-family: "Playfair Display", serif;
+}
 
 .update-profile-main-wrapper {
   width: 100%;
@@ -20,7 +24,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6b7280;
 }
 
 .form-wrapper {
@@ -34,7 +37,8 @@ body {
 }
 .form-wrapper h2 {
   margin-bottom: 30px;
-  color: #111827;
+  font-weight: 600;
+  color: #1c1c1c;
   text-align: center;
 }
 .updatedprof-img-wrapper {
@@ -54,15 +58,16 @@ form {
   padding: 0 5px;
 }
 form > label {
-  color: #111827;
+  color: #1c1c1c;
+  font-weight: 400;
 }
 form > input {
   padding: 8px 10px;
-  border: 2px solid #d1d5db;
+  border: 2px solid #dcd5cb;
   margin-top: 10px;
   width: 100%;
   outline: none;
-  color: #6b7280;
+  color: #1c1c1c;
   background-color: transparent;
   border-radius: 4px;
 }
@@ -76,12 +81,12 @@ form > input {
   padding: 10px 15px;
   border: none;
   border-radius: 7px;
-  background-color: #4f46e5;
+  background-color: #1c1c1c;
   color: #fff;
   transition: all ease-in 0.2s;
 }
 .btns-wrapper button:hover {
-  background-color: #3d30cb;
+  background-color: #8b5e3c;
   cursor: pointer;
 }
 

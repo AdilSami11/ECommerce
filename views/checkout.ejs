@@ -8,31 +8,8 @@
   </head>
   <body>
     <div class="checkout-main-page">
-           <!-- navbar wrapper -->
-         <% if(user.isAdmin === true){ %>
-        <div class="navbar-wrapper">
-        <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cartCount %>)</a>
-          <a href="/cart">Add Products</a>
-          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
-        </div>
-      </div>
-   <% } else{ %>
-    <div class="navbar-wrapper">
-        <div class="logo">NAQSH</div>
-        <div class="nav-links-wrapper">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/cart">Cart (<%= cartCount %>)</a>
-          <a href="/profile"><img src="/uploads/<%= user.picture %>" alt="profile-img"></a>
-        </div>
-      </div>
-   <% } %>
+      <%- include('./partials/Navbar.ejs') %>   
    <!-- main checkout wrapper -->
-
      <!-- checkout title wrapper -->
       <div class="checkout-title-wrapper">
         <h1>Checkout</h1>
@@ -72,7 +49,6 @@
           </div>
         </div>
       </div>
-
       <!-- footer -->
       <%- include("partials/footer") %>
     </div>

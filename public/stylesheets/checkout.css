@@ -1,22 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 html,
 body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background-color: #f8f6f1d9;
+  background-color: #f7f4ef;
+}
+.logo,
+.checkout-title-wrapper h1,
+.checkout-left-wrapper label,
+.checkout-left-wrapper form h3,
+.order-item-info h4,
+.order-item-info span {
+  font-family: "Playfair Display", serif;
 }
 
 .checkout-main-page {
   width: 100%;
   min-height: 100vh;
+  background-color: #f7f4ef;
 }
 
 .navbar-wrapper {
@@ -31,7 +40,7 @@ body {
 
 .logo {
   font-size: 1.7rem;
-  color: #1f1f1f;
+  color: #1c1c1c;
 }
 
 .nav-links-wrapper {
@@ -43,7 +52,7 @@ body {
 
 .nav-links-wrapper a {
   text-decoration: none;
-  color: #1f1f1f;
+  color: #1c1c1c;
   transition: all ease-in-out 0.2s;
   display: flex;
   align-items: center;
@@ -51,14 +60,14 @@ body {
   overflow: hidden;
 }
 .nav-links-wrapper a > img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .nav-links-wrapper a:hover {
-  color: #a67c52;
+  color: #8b5e3c;
 }
 
 .checkout-wrapper {
@@ -68,13 +77,12 @@ body {
   display: flex;
 }
 .checkout-title-wrapper {
-  margin-top: 15px;
-  /* background-color: #a67c52; */
+  margin-top: 10px;
   text-align: center;
 }
 .checkout-title-wrapper h1 {
-  font-size: 2.3rem;
-  font-weight: 300;
+  font-size: 2.1rem;
+  font-weight: 600;
   letter-spacing: 1.5px;
 }
 .checkout-left-wrapper {
@@ -96,7 +104,7 @@ body {
   width: 100%;
   height: 45px;
   padding: 0 14px;
-  border: 1px solid #d5d5d5;
+  border: 1px solid #77716a95;
   border-radius: 6px;
   font-size: 15px;
   outline: none;
@@ -104,10 +112,10 @@ body {
   margin-bottom: 10px;
 }
 .checkout-left-wrapper input:focus {
-  border-color: #222;
+  border-color: #1c1c1c;
 }
 .checkout-left-wrapper input::placeholder {
-  color: #999;
+  color: #77716a;
 }
 
 .checkout-left-wrapper form h3 {
@@ -121,7 +129,7 @@ body {
   padding: 10px 15px;
   border: none;
   margin-top: 10px;
-  background-color: #1f1f1f;
+  background-color: #1c1c1c;
   color: #fff;
   border-radius: 4px;
 }
@@ -158,12 +166,13 @@ body {
 }
 .order-item-info span {
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .order-item p {
-  background-color: #a67c52;
+  background-color: #8b5e3c;
   color: #fff;
   border-radius: 5px;
   padding: 3px;
+  font-weight: 400;
 }
